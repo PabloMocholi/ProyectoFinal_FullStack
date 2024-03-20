@@ -15,7 +15,7 @@ app.use("/API/v1/", indexRouter)
 
 app.get("/", (req, res) => {
     res.setHeader("Content-Type", "text/html");
-    res.send("<h1>PRoyecto FullStack</h1>")
+    res.send("<h1>Proyecto FullStack</h1>")
 })
 
 

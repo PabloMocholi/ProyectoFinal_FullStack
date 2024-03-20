@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { easyFetch } from "../../helpers/utils"
 import { useNavigate } from "react-router-dom"
 import { LoginContext } from "../components/layout.jsx";
+import './login.css'
 
 
 
@@ -63,16 +64,17 @@ const Login = () => {
     return (
         <>
             <div className="Login">
+                <h1>RE-PLAY</h1>
                 <form className="form" onSubmit={handleLogin} action="#" method="POST">
                     <label htmlFor="user">Usuario</label>
-                    <input onChange={handleInputChange} type="text" name="user" id="user" />
+                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" />
                     <label htmlFor="pass">Contraseña</label>
-                    <input onChange={handleInputChange} type="password" name="pass" id="pass" />
+                    <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" />
                     <button className="button" type="submit">Login</button> 
                 </form>
             </div>
 
-            <button onClick={handleRegister} className="button" type="submit">Register</button> 
+            {/*<button onClick={handleRegister} className="button" type="submit">¿No tienes cuenta?</button> */}
         </>
     )
 }
