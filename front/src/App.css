@@ -1,8 +1,11 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  /*padding: 2rem;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100vw;
   text-align: center;
+
 }
 
 body {
@@ -47,4 +50,14 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/*-------------*/
+.button{
+  background-color: #9C00DA;
+}
+.button:hover{
+  color: #9C00DA;
+  background-color: black;
+  border: 1px solid white;
 }

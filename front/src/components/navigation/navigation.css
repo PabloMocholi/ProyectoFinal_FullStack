@@ -1,0 +1,16 @@
+
+.ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.li{
+    text-decoration: none;
+}
+
+.link{
+    color: white
+}

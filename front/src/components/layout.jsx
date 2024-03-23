@@ -1,12 +1,12 @@
 import { createContext, useState, useEffect } from 'react'
 import { Routes, Route, Outlet, Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
-import Navigation from './navigation';
+import Navigation from './navigation/navigation';
 
 export const LoginContext = createContext([]);
 
 export const Layout = () => {
-    const [isLoged, setStatedLoged] = useState(false)
+    const [isLoged, setStatedLoged] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {

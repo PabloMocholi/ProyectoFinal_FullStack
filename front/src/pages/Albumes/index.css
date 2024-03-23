@@ -1,0 +1,57 @@
+.Albumes{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.Album{
+
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 1px 5px 10px black ;
+
+}
+
+.Album-content{
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    position: relative;
+}
+
+.background-img{
+    background-image: url("https://app.activate.fm/news/img/bad_gyal_nuevo_album_la_joia.jpg");
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    filter: blur(20px);
+}
+
+.background-img-2{
+    background-image: url("https://m.media-amazon.com/images/I/913-R1MWfTL._UF894,1000_QL80_.jpg");
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    filter: blur(20px);
+}
+
+
+
+
+.img{
+    width: 300px;
+
+}
+
+@media (max-width: 450px) {
+    .Album-content{
+      
+        flex-direction: column;
+       
+    }
+    
+}
