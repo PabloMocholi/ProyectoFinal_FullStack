@@ -1,0 +1,18 @@
+.Home{
+    display: flex;
+    justify-content: center;
+}
+
+
+.tit{
+    font-family: DX, 'Times New Roman', Times, serif;
+    font-size: 800%;
+    font-weight: 100;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+
+  .tit.active {
+    font-size: 900%;
+  }

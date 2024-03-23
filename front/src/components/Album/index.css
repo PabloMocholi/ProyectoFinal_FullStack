@@ -1,0 +1,112 @@
+
+.Album{
+
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 1px 5px 10px black ;
+  
+
+}
+
+.Album:hover{
+    border: 1px solid white;
+    transform: scale(1.05);
+
+}
+
+.Album-content{
+    width: 94%;
+    padding: 20px;
+    display: flex;
+    position: relative;
+}
+
+.Album-info{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+}
+.Album-info-top{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Album-info-bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.precio{
+    border: 1px solid black;
+    font-size: 180%;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: #9C00DA;
+    color: black;
+}
+
+.background-img{
+  
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    filter: blur(20px);
+}
+
+
+
+.img{
+    width: 300px;
+
+}
+
+.h2{
+    
+    margin: 0;
+    font-size: 350%;
+    padding-top: 20px;
+  
+    
+}
+
+.h4{
+    font-weight: 200;
+    font-size: 150%;
+    margin: 0;
+}
+
+@media (max-width: 450px) {
+    .Album-content{
+      
+        flex-direction: column;
+         
+           
+    }
+
+    .h2{
+   
+        font-size: 200%;
+        text-align: center;
+    }
+    
+}
+
+/**/
+
+.AlbumL{
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    z-index: 1;
+}

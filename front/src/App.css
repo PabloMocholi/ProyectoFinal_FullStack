@@ -4,6 +4,8 @@
   justify-content: space-between;
 
   width: 100vw;
+  height: 100vh;
+
   text-align: center;
 
 }
@@ -53,11 +55,17 @@ body {
 }
 
 /*-------------*/
-.button{
+.button {
   background-color: #9C00DA;
 }
-.button:hover{
+
+.button:hover {
   color: #9C00DA;
   background-color: black;
   border: 1px solid white;
+}
+
+@font-face {
+  font-family: DX;
+  src: url("./fonts/DXRigraf-SemiBold.otf");
 }
