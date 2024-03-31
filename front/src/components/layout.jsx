@@ -6,7 +6,8 @@ import Navigation from './navigation/navigation';
 export const LoginContext = createContext([]);
 
 export const Layout = () => {
-    const [isLoged, setStatedLoged] = useState(true)
+    const [isLoged, setIsLoged] = useState(false)
+    const [userData, setUserData] = useState({})
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -18,7 +19,7 @@ export const Layout = () => {
 
 
     return (<>
-        <LoginContext.Provider value={[isLoged, setStatedLoged]}>
+        <LoginContext.Provider value={{isLoged, setIsLoged, userData, setUserData}}>
             {
                 isLoged ? <>
                     <Navigation />

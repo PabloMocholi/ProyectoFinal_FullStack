@@ -2,35 +2,39 @@
 import { useState } from 'react'
 import './index.css'
 
-export const Album = ({ titulo, imagen, artista, fecha, precio }) => {
+
+
+export const Album = ({ datos}) => {
+
+    const {_id, nombre, imagen, artista, precio} = datos
 
     const [isOpen, setOpen] = useState(false)
     const ToggleActive = () => {
         setOpen(!isOpen);
     }
 
+
     return (<>
 
         <div className='Album' onClick={ToggleActive}>
-            <div className='background-img' style={{ backgroundImage: `url(${imagen})` }}></div>
+            <div className='background-img' style={{ backgroundImage: `url(./images/${imagen})` }}></div>
             <div className='Album-content'>
-                <img className='img' src={imagen} alt="" />
+                <img className='img'src={`./images/${imagen}`} alt="" />
                 <div className='Album-info'>
                     <div className='Album-info-top'>
-                        <h2 className='h2'>{titulo}</h2>
+                        <h2 className='h2'>{nombre}</h2>
                         <h4 className='h4'>{artista}</h4>
                     </div>
-                    <div className='Album-info-bottom'>
-                        <span className=''>Fecha lanzamiento:{fecha} </span>
-                        <span className='precio'>{precio}€</span>
-                    </div>
+
+                    <span className='precio'>{precio}€</span>
+
                 </div>
             </div>
         </div>
 
         {
 
-            isOpen && <AlbumLightBox ToggleActive={ToggleActive} titulo={titulo} imagen={imagen} artista={artista} fecha={fecha} precio={precio} />
+            isOpen && <AlbumLightBox ToggleActive={ToggleActive} datos={datos} />
 
 
         }
@@ -42,26 +46,38 @@ export const Album = ({ titulo, imagen, artista, fecha, precio }) => {
 }
 
 
+const AlbumLightBox = ({ ToggleActive, datos }) => {
 
-const AlbumLightBox = ({ToggleActive, titulo, imagen, artista, fecha, precio }) => {
+    const {_id, nombre, imagen, stock, artista, precio} = datos
+
     return (<>
         <div className='AlbumL'>
 
 
-            <div className='Album-content'>
-                <img className='img' src={imagen} alt="" />
+            <div className='AlbumL-data'>
+                <div >
+                    <img className='img' src={`./images/${imagen}`} alt="" />
+
+                </div>
+
                 <div className='Album-info'>
                     <div className='Album-info-top'>
-                        <h2 className='h2'>{titulo}</h2>
+                        <h2 className='h2'>{nombre}</h2>
                         <h4 className='h4'>{artista}</h4>
                     </div>
                     <div className='Album-info-bottom'>
-                        <span className=''>Fecha lanzamiento:{fecha} </span>
-                        <span className='precio'>{precio}€</span>
+                        <span>Precio: {precio}</span>
+                        <span>Disponibles: {stock}</span>
+                    
+
                     </div>
+
                 </div>
             </div>
-            <span onClick={ToggleActive}>CLOSE</span>
+            <button>Añadir a carrito</button>
+
+
+            <span className='buttonClose' onClick={ToggleActive}>CLOSE</span>
 
 
         </div>

@@ -7,6 +7,7 @@ import Login from './auth/login'
 import { Layout } from './components/layout'
 import Albumes from './pages/Albumes'
 import Home from './pages/home'
+import Inventario from './pages/Inventario/inventario'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/home' element={<Home />}></Route>
         <Route path='/albumes' element={<Albumes />}></Route>
+        <Route path='/inventario' element={<Inventario />}></Route>
       </Route>
 
     </Routes>

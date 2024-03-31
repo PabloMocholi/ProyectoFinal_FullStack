@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    position: relative;
    
 }
 .Album-info-top{
@@ -44,11 +45,16 @@
 
 .precio{
     border: 1px solid black;
-    font-size: 180%;
+    font-size: 120%;
     padding: 15px;
     border-radius: 50px;
-    background-color: #9C00DA;
-    color: black;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 100px;
+
 }
 
 .background-img{
@@ -81,6 +87,54 @@
     margin: 0;
 }
 
+/*-----------*/
+
+.AlbumL{
+    width: 50%;
+    height: 70%;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+   
+}
+
+.AlbumL-data{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+
+.Album-info-bottom{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+}
+.buttonClose{
+    position: fixed;
+    top: 2%;
+    right:2%
+}
+
+
+
+
+.u-blur{
+    filter: blur(20px);
+}
+/*----------*/
+
 @media (max-width: 450px) {
     .Album-content{
       
@@ -99,14 +153,3 @@
 
 /**/
 
-.AlbumL{
-    width: 80%;
-    height: 70%;
-    background-color: white;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: black;
-    z-index: 1;
-}

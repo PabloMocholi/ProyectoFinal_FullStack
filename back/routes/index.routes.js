@@ -1,13 +1,22 @@
 import { Router } from "express";
-import { addNewAlbum, deleteAlbum, getAlbumById, getAllAlbumes, updateAlbum } from "../controllers/albumes.controller";
-import { addCancionToAlbum, deleteCancion, getAllCancionesByAlbum, getCancionById, updateCancion } from "../controllers/canciones.controller";
-import { getUser, registerUser } from "../controllers/login.controller";
+import {  actualizarAlbum, getAllAlbumes, newAlbum} from "../controllers/albumes.controller.js";
+import { getUser, registerUser } from "../controllers/login.controller.js";
+
+import multer from 'multer';
+
+const upload = multer({ dest: 'uploads/' });
 
 
 const router = Router();
-
-
 router.get("/albumes", getAllAlbumes)
+router.post("/login", getUser )
+router.post("/register", registerUser)
+
+router.put("/inventario/:id",actualizarAlbum)
+router.post("/inventario", upload.single('imagen'), newAlbum)
+
+/*
+
 router.get("/albumes/:id", getAlbumById)
 router.post("/albumes", addNewAlbum)
 router.update("/albumes/:id", updateAlbum)
@@ -20,8 +29,8 @@ router.update("/canciones/:id", updateCancion)
 router.delete("/canciones/:id", deleteCancion)
 
 
-router.get("/login", getUser )
-router.post("/register",registerUser )
+
+router.post("/register",registerUser )*/
 
 
 export default router

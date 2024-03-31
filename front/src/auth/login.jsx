@@ -9,9 +9,9 @@ import './login.css'
 const Login = () => {
 
     const [formData, setFormData] = useState({})
-    const [userLoged, setLoged] = useState([])
-    const [isLoged, setIsLoged] = useContext(LoginContext);
+    const {isLoged, setIsLoged, setUserData} = useContext(LoginContext);
 
+    const { VITE_URL } = import.meta.env;
 
     const navegador = useNavigate()
 
@@ -24,22 +24,25 @@ const Login = () => {
 
     const handleLogin = (event) => {
         event.preventDefault();  
-        console.log("handleLogin")
         easyFetch({
-            url: "http://localhost:3000/API/v1/login",
+            url: `${VITE_URL}/login`,
             body: formData,
             method: "POST",
             callback: (data) => {
                 console.log(" compruebo login", data)
-                console.log("DATA", data)
-                setLoged(data)
     
                 if (Object.keys(data).length > 0) {
-                    alert("EXITO")
+                    console.log("exito")
+                   // alert("EXITO")
                     setIsLoged(true);
                     navegador("/home")
+                    setUserData({
+                        id: data[0]._id,
+                        nombre: data[0].nombre,
+                        is_admin: data[0].is_admin
+                    })
                 } else {
-                    alert("Usuario incorrecto")
+                 //   alert("Usuario incorrecto")
                 }
             }
         })
@@ -49,14 +52,11 @@ const Login = () => {
         
         console.log("handleLogin")
         easyFetch({
-            url: "http://localhost:3000/API/v1/register",
+            url: `${VITE_URL}/register`,
             body: formData,
             method: "POST",
             callback: (data) => {
                 console.log("usuario registrado", data)
-
-         
-    
             }
         })
     }
@@ -70,9 +70,13 @@ const Login = () => {
                     <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" />
                     <label htmlFor="pass">Contraseña</label>
                     <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" />
-                    <button className="button" type="submit">Login</button> 
+                    <button className="button" type="submit" onClick={handleLogin}>Login</button> 
+               
                 </form>
+                <button className="button" type="submit" onClick={handleRegister}>Registro</button> 
             </div>
+
+  
 
             {/*<button onClick={handleRegister} className="button" type="submit">¿No tienes cuenta?</button> */}
         </>

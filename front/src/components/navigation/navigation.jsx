@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import './navigation.css'
 
 const Navigation = () => {
-    const [isLoged, setIsLoged] = useContext(LoginContext);
+    const { isLoged, setIsLoged, userData } = useContext(LoginContext);
     const navegador = useNavigate()
 
     function Logout() {
@@ -13,12 +13,13 @@ const Navigation = () => {
         navegador("/login")
     }
 
+
     return (<>
         <nav className='nav'>
             <ul className="ul">
 
                 {
-                    isLoged ? <>
+                    (isLoged && userData.is_admin == false) ? <>
                         <li className="li">
                             <Link className="link" to="/home">Home</Link>
                         </li>
@@ -26,8 +27,19 @@ const Navigation = () => {
                             <Link className="link" to="/albumes">Albumes</Link>
                         </li>
                         <li className="li" > <button className="button" onClick={Logout}>Logout</button> </li></> :
-                        <li className="li">< Link className="link" to="/login">Login</Link>
+
+
+                    (isLoged && userData.is_admin == true) ? <>
+                        <li className="li">
+                            <Link className="link" to="/inventario">Inventario</Link>
                         </li>
+                        <li className="li">
+                            <Link className="link" to="/albumes">Usuarios</Link>
+                        </li>
+                        <li className="li" > <button className="button" onClick={Logout}>Logout</button> </li></> :
+
+                    <li className="li">< Link className="link" to="/login">Login</Link>
+                    </li>
                 }
 
             </ul>
