@@ -142,13 +142,31 @@
          
            
     }
+    .Album-info-top{
+        font-size: 90%;
+        margin-right: 10px;
+    }
 
     .h2{
    
         font-size: 200%;
         text-align: center;
     }
+
+    .precio{
+        font-size: 70%;
+        position: absolute;
+        right: 2%;
+        width: 100px;
+        bottom: -9%;
+        right: 80%;
+        width: 30px;
+        height: 10px;
     
+    }
+    .img{
+        width: 20%;
+    }
 }
 
 /**/

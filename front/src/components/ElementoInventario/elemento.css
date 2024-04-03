@@ -4,6 +4,9 @@
     padding: 20px;
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
 }
 
 .column{
@@ -17,8 +20,3 @@
     flex-direction: column;
 }
 
-.row{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}

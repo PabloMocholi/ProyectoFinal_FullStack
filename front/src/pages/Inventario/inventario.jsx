@@ -7,16 +7,15 @@ import AddAlbum from '../../components/AddAlbum/addalbum.jsx'
 const Inventario = () => {
 
     const [inventario, setInventario] = useState([])
-
     const [isOpen, setOpen] = useState(false)
+
     const ToggleActive = () => {
         setOpen(!isOpen);
     }
 
     const { VITE_URL } = import.meta.env;
 
-    useEffect(() => {
-
+    const cargaInventario = () => {
         easyFetch({
             url: `${VITE_URL}/albumes`,
 
@@ -25,7 +24,10 @@ const Inventario = () => {
                 setInventario(data.data)
             }
         })
+    }
 
+    useEffect(() => {
+        cargaInventario()
     }, [])
 
 
@@ -34,8 +36,8 @@ const Inventario = () => {
             {
                 inventario && inventario.map((elemento) => {
                     return (<>
-                        
-                        <Elemento key={elemento._id} datos={elemento}/>
+
+                        <Elemento key={elemento._id} datos={elemento}  cargaInventario={cargaInventario} />
 
                     </>)
                 })
@@ -43,7 +45,7 @@ const Inventario = () => {
         </div>
         <button onClick={ToggleActive} className='add'>+</button>
         {
-            isOpen && <AddAlbum isOpen={isOpen} ToggleActive={ToggleActive} />
+            isOpen && <AddAlbum isOpen={isOpen} ToggleActive={ToggleActive} cargaInventario={cargaInventario} />
         }
     </>)
 }

@@ -1,12 +1,13 @@
 
 import { useState } from 'react'
 import './index.css'
-
+const { VITE_URL_IMGS } = import.meta.env;
 
 
 export const Album = ({ datos}) => {
 
     const {_id, nombre, imagen, artista, precio} = datos
+    
 
     const [isOpen, setOpen] = useState(false)
     const ToggleActive = () => {
@@ -17,9 +18,9 @@ export const Album = ({ datos}) => {
     return (<>
 
         <div className='Album' onClick={ToggleActive}>
-            <div className='background-img' style={{ backgroundImage: `url(./images/${imagen})` }}></div>
+            <div className='background-img' style={{ backgroundImage: `url(${VITE_URL_IMGS}${imagen})` }}></div>
             <div className='Album-content'>
-                <img className='img'src={`./images/${imagen}`} alt="" />
+                <img className='img'src={`${VITE_URL_IMGS}${imagen}`} alt="" />
                 <div className='Album-info'>
                     <div className='Album-info-top'>
                         <h2 className='h2'>{nombre}</h2>
@@ -56,7 +57,7 @@ const AlbumLightBox = ({ ToggleActive, datos }) => {
 
             <div className='AlbumL-data'>
                 <div >
-                    <img className='img' src={`./images/${imagen}`} alt="" />
+                    <img className='img' src={`${VITE_URL_IMGS}${imagen}`} alt="" />
 
                 </div>
 

@@ -4,16 +4,27 @@ import { getUser, registerUser } from "../controllers/login.controller.js";
 
 import multer from 'multer';
 
-const upload = multer({ dest: 'uploads/' });
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+      cb(null, `${file.originalname}`)
+    }
+})
+  
+const upload = multer({ storage })
 
 const router = Router();
 router.get("/albumes", getAllAlbumes)
 router.post("/login", getUser )
 router.post("/register", registerUser)
 
-router.put("/inventario/:id",actualizarAlbum)
+router.put("/inventario/:id", upload.single('imagen'), actualizarAlbum)
 router.post("/inventario", upload.single('imagen'), newAlbum)
+
+//router.post("/inventario", newAlbum)
 
 /*
 
