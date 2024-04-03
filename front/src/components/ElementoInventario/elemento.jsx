@@ -19,7 +19,7 @@ const Elemento = ({ datos, cargaInventario }) => {
         setFormData({ ...formData, imagen: file });
     };
 
-    const handleUpdateAlbum = async () => {
+    const handleUpdateAlbum = () => {
 
         console.log(formData)
         const newformData = new FormData();
@@ -41,15 +41,28 @@ const Elemento = ({ datos, cargaInventario }) => {
              }
          }) */
 
-
         fetch(`${VITE_URL}/inventario/${_id}`, {
             method: 'PUT',
             body: newformData
         }).then(response => response.json())
             .then(data => {
-                console.log(" actualizado cn exito!", data)
+                //console.log(" actualizado cn exito!", data)
                 cargaInventario() 
             })
+
+    }
+
+    const handleDeleteAlbum = ()=>{
+
+        easyFetch({
+        url: `${VITE_URL}/inventario/${_id}`,
+        method: "DELETE",
+        body: formData,
+        callback: (data) => {
+            console.log(" actualizado cn exito!", data)
+            cargaInventario()
+        }
+    }) 
 
     }
 
@@ -83,7 +96,8 @@ const Elemento = ({ datos, cargaInventario }) => {
                     </form>
                 </div>
 
-                <button onClick={handleUpdateAlbum}>actualizar</button>
+                <button className='update' onClick={handleUpdateAlbum}>actualizar</button>
+                <button className='delete' onClick={handleDeleteAlbum}>eliminar</button>
             </div>
 
 

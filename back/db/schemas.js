@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import { Schema } from "mongoose"
 
 const options = {
     collection: "albumes",
@@ -48,3 +49,27 @@ const usuariosSchema = new mongoose.Schema({
 
 
 export const Usuario = mongoose.model("Usuario", usuariosSchema)
+
+
+//---------
+
+const options3 = {
+    collection: "compras",
+
+}
+const comprasSchema = new mongoose.Schema({
+
+    usuario: { type: Schema.Types.ObjectId, 
+        ref: 'Usuario' },
+    albumes: Array,
+    precio: Number,
+    fecha_compra:  {
+        type: Date,
+        default: Date.now
+    }
+
+    
+}, options3)
+
+
+export const Compra = mongoose.model("Compra", comprasSchema)

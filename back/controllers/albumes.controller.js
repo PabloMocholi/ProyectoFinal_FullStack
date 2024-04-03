@@ -1,3 +1,4 @@
+import { response } from "express"
 import { Album } from "../db/schemas.js"
 import multer from 'multer'
 
@@ -95,41 +96,19 @@ export const newAlbum = async (req, res) => {
     responseApi.status = 200
 
     res.status(200).json(responseApi)
+};
 
+export const deleteAlbum= async (req, res) => {
 
-    /*// Llamar al middleware de Multer para manejar la subida de imágenes
-    upload(req, res, async function (err) {
-        if (err) {
-            return res.status(500).json({ error: 'Error al subir la imagen' });
-        }
+    const {id} = req.params
 
-        // Obtener los datos del cuerpo de la solicitud
-        const { nombre, artista, precio, stock } = req.body;
+    const albumEliminado = await Album.findByIdAndDelete(id)
 
-        // Obtener el nombre del archivo de imagen subida
-        const imagen = req.file ? req.file.filename : null;
+    responseApi.data = albumEliminado
+    responseApi.msg = "album eliminado"
+    responseApi.status = 200
 
-        // Crear un nuevo álbum con los datos proporcionados
-        const newAlbum = new Album({
-            nombre: nombre,
-            stock: stock,
-            artista: artista,
-            precio: precio,
-            imagen: imagen,
-            created_at: Date.now(),
-            updated_at: Date.now(),
-            deleted_at: null
-        });
-
-        try {
-            // Guardar el nuevo álbum en la base de datos
-            await newAlbum.save();
-            // Enviar la respuesta con el nuevo álbum
-            res.status(200).json(newAlbum);
-        } catch (error) {
-            // Manejar cualquier error de la base de datos
-            res.status(500).json({ error: 'Error al guardar el álbum en la base de datos' });
-        }
-    });*/
+    res.status(200).json(responseApi)
+   
 };
 

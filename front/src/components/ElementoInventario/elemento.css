@@ -9,6 +9,11 @@
     border-radius: 20px;
 }
 
+/* .img{
+    width: 300px;
+    height: 300px;
+} */
+
 .column{
     display: flex;
     flex-direction: column;
@@ -18,5 +23,22 @@
 .column-data{
     display: flex;
     flex-direction: column;
+}
+
+.update{
+    background-color:rgba(156, 0, 218, 1) ;
+}
+
+.delete{
+    margin-top: 10px;
+    background-color: red;
+}
+
+.delete:hover{
+    border: 1px solid white;
+}
+
+.update:hover{
+    border: 1px solid white;
 }
 
