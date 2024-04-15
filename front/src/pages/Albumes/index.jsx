@@ -49,6 +49,7 @@ export const Albumes = () => {
             };
 
             setCarrito(nuevoCarrito)
+         
 
         } else {
             setCarrito([...carrito, { ...album, cantidad: 1 }])

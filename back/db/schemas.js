@@ -42,7 +42,11 @@ const usuariosSchema = new mongoose.Schema({
 
     nombre: String,
     password: String,
-    is_admin: Boolean
+    is_admin: Boolean,
+    direccion: String,
+    ciudad: String,
+    telefono : String,
+    email: String,
 
     
 }, options2)

@@ -35,7 +35,10 @@ const Login = () => {
                     console.log("exito")
                    // alert("EXITO")
                     setIsLoged(true);
-                    navegador("/home")
+                    if(data[0].is_admin)
+                        navegador("/inventario")
+                    else
+                        navegador("/home")
                     setUserData({
                         id: data[0]._id,
                         nombre: data[0].nombre,

@@ -15,6 +15,13 @@ export const Album = ({ datos}) => {
         setOpen(!isOpen);
     }
 
+    const procesarCompra = (album)=>{
+
+        ToggleActive()
+        addToCarrito(album)
+
+    }
+
 
     return (<>
 
@@ -39,7 +46,7 @@ export const Album = ({ datos}) => {
 
         {
 
-            isOpen && <AlbumLightBox ToggleActive={ToggleActive} datos={datos} />
+            isOpen && <AlbumLightBox ToggleActive={ToggleActive} datos={datos} procesarCompra={procesarCompra} />
 
 
         }
@@ -51,7 +58,7 @@ export const Album = ({ datos}) => {
 }
 
 
-const AlbumLightBox = ({ ToggleActive, datos }) => {
+const AlbumLightBox = ({ ToggleActive, datos, procesarCompra }) => {
 
     const {_id, nombre, imagen, stock, artista, precio} = datos
     const { carrito, setCarrito, addToCarrito } = useContext(carritoContext);
@@ -80,7 +87,7 @@ const AlbumLightBox = ({ ToggleActive, datos }) => {
 
                 </div>
             </div>
-            <button onClick={()=>addToCarrito(datos)}>Añadir a carrito</button>
+            <button onClick={()=>procesarCompra(datos)}>Añadir a carrito</button>
 
 
             <span className='buttonClose' onClick={ToggleActive}>CLOSE</span>

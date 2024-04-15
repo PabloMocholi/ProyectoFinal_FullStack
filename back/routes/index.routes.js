@@ -3,6 +3,8 @@ import {  actualizarAlbum, deleteAlbum, getAllAlbumes, newAlbum} from "../contro
 import { getUser, registerUser } from "../controllers/login.controller.js";
 import { addCompra } from "../controllers/carrito.controller.js";
 import multer from 'multer';
+import { getPerfil, updatePerfil } from "../controllers/perfil.controller.js";
+import { getUsuarios } from "../controllers/usuarios.controller.js";
 
 
 
@@ -29,6 +31,11 @@ router.post("/inventario", upload.single('imagen'), newAlbum)
 router.delete("/inventario/:id", deleteAlbum)
 
 router.post("/carrito", addCompra)
+
+router.get("/perfil/:id", getPerfil)
+router.put("/perfil/:id", updatePerfil)
+
+router.get("/usuarios", getUsuarios)
 
 
 

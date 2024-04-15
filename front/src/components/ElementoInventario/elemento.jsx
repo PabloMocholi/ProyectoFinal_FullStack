@@ -59,7 +59,7 @@ const Elemento = ({ datos, cargaInventario }) => {
         method: "DELETE",
         body: formData,
         callback: (data) => {
-            console.log(" actualizado cn exito!", data)
+            console.log(" borrado cn exito!", data)
             cargaInventario()
         }
     }) 

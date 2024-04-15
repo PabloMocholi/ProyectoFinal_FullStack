@@ -14,3 +14,10 @@
 .link{
     color: white
 }
+
+.fixed{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    z-index: 1;
+}
