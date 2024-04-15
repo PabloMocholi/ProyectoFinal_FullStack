@@ -18,6 +18,25 @@
 
 }
 
+.div-register{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+}
+.form-register{
+    display: flex;
+    flex-direction: column;
+  
+    text-align: left;
+
+}
+
 .button{
     background-color: #9C00DA;
 }
@@ -31,12 +50,34 @@
     margin-bottom: 20px;
 }
 
+.registrate{
+    background-color: transparent;
+    color: white;
+
+    font-weight: bold;
+}
+.registrate:hover{
+
+    color: #9C00DA;
+
+}
+
+.right{
+    position: fixed;
+    right: 1%;
+    top: 1%;
+}
+
 @media (max-width: 450px) {
     .form{
       
         width: 50%;
          
            
+    }
+
+    .div-register{
+        width: 90%;
     }
     
 }

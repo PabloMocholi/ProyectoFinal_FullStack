@@ -13,6 +13,7 @@ const Perfil = () => {
     const [usuario, setUsuario] = useState([])
     const [formData, setFormData] = useState([])
 
+
     const cargarPerfil = () => {
         easyFetch({
             url: `${VITE_URL}/perfil/${userData.id}`,
@@ -65,7 +66,7 @@ const Perfil = () => {
                 {
                     usuario && <>
                         <form className="FormPerfil">
-                        <h2 className="Tit">TUS DATOS:</h2>
+                            <h2 className="Tit">TUS DATOS:</h2>
                             <div className="FormPerfil-row">
                                 <label htmlFor="nombre">Nombre de usuario:</label>
                                 <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} id="nombre" />
@@ -89,6 +90,7 @@ const Perfil = () => {
                             </div>
                         </form>
                         <button onClick={handleUpdatePerfil}>Actualizar perfil</button>
+
 
                     </>
                 }

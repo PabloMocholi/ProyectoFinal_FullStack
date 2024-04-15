@@ -1,7 +1,9 @@
 
-.panelInventario{
-    margin-top: 20px;
+#panelInventario{
+    margin-top: 100px;
+    padding: 20px;
 }
+
 .Inventario{
     display: flex;
     flex-wrap: wrap;
@@ -11,10 +13,11 @@
 }
 
 .intro{
-    position: sticky;
-    top: 0px;
+    position: fixed;
+    top: 2%;
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(156, 0, 218, 1) 100%);
     padding-bottom: 20px;
+    width: 100%;
 }
 
 .intro-a{
@@ -30,6 +33,7 @@
     padding: 10px;
     border-radius: 20px;
     margin-top: 10px;
+    cursor: pointer;
 
 }
 
@@ -46,3 +50,7 @@
     border: 1px solid white;
 }
 
+.active{
+    background-color: white ;
+    color: black;
+}

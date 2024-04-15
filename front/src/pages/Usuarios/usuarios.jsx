@@ -25,7 +25,7 @@ const Usuarios = () => {
 
 
     return (<>
-        Lista de usuarios registrados
+
         <div className="ListaTarjetasUsuario">
             {
                 usuarios && usuarios.map((usuario) => {

@@ -13,6 +13,7 @@
     flex-direction: column;
     text-align: left;
     width: 45%;
+    font-size: 130%
 }
 .Compras{
     display: flex;
@@ -78,3 +79,4 @@
     width: 200px;
     height: 200px;
 }
+

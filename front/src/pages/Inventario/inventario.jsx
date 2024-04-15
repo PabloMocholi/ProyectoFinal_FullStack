@@ -9,6 +9,7 @@ const Inventario = () => {
 
     const [inventario, setInventario] = useState([])
     const [isOpen, setOpen] = useState(false)
+    const [pantalla, setPantalla] = useState("inventario")
 
     const ToggleActive = () => {
         setOpen(!isOpen);
@@ -34,39 +35,44 @@ const Inventario = () => {
 
     return (<>
         <div className='intro'>
+
             <h1>Panel de administrador</h1>
             <div className='intro-a'>
-                <a className='a' href="#panelUsuarios">Usuarios</a>
-                <a className='a' href="#panelInventario">Inventario</a>
+                <a onClick={()=>setPantalla("usuario")} className={pantalla == "usuario" ? ' a active' : ' a '}>Usuarios</a>
+                <a onClick={()=>setPantalla("inventario")} className={pantalla == "inventario" ? ' a active' : ' a '}>Inventario</a>
             </div>
 
         </div>
 
+        {
+            pantalla == "inventario" ? <>
+                <div id='panelInventario' >
+                    <div className='Inventario'>
+                        {
+                            inventario && inventario.map((elemento) => {
+                                return (<>
+
+                                    <Elemento key={elemento._id} datos={elemento} cargaInventario={cargaInventario} />
+
+                                </>)
+                            })
+                        }
+                    </div>
+                    <button onClick={ToggleActive} className='add'>+</button>
+                    {
+                        isOpen && <AddAlbum isOpen={isOpen} ToggleActive={ToggleActive} cargaInventario={cargaInventario} />
+                    }
+                </div></> :
+                <>
+
+                    <div >
+                        <Usuarios />
+                    </div></>
+
+        }
 
 
-        <div>
-            <h2 id='panelInventario'>Inventario:</h2>
-            <div className='Inventario'>
-                {
-                    inventario && inventario.map((elemento) => {
-                        return (<>
 
-                            <Elemento key={elemento._id} datos={elemento} cargaInventario={cargaInventario} />
-
-                        </>)
-                    })
-                }
-            </div>
-            <button onClick={ToggleActive} className='add'>+</button>
-            {
-                isOpen && <AddAlbum isOpen={isOpen} ToggleActive={ToggleActive} cargaInventario={cargaInventario} />
-            }
-        </div>
-
-        <div >
-            <h2 id='panelUsuarios'>Usuarios</h2>
-            <Usuarios />
-        </div>
 
     </>)
 }

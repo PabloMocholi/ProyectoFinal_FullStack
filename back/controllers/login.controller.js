@@ -44,7 +44,7 @@ export const registerUser = async (req, res) => {
 
     try {
         console.log("INSERT USER")
-        const { user, pass } = req.body
+        const { user, pass, mail, dir, ciudad, tlf } = req.body
         console.log("Cuerpo del registro", req.body)
 
         let passEncrypted = bcrypt.hashSync(pass, 10)
@@ -53,7 +53,11 @@ export const registerUser = async (req, res) => {
 
             nombre: user,
             password: passEncrypted,
-            is_admin: false
+            is_admin: false,
+            direccion: dir,
+            ciudad: ciudad,
+            telefono:tlf,
+            email:mail
 
         })
 
