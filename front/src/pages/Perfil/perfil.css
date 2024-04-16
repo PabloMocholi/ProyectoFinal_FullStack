@@ -80,3 +80,24 @@
     height: 200px;
 }
 
+
+.Modal{
+    background-color: rgba(156, 0, 218, 1);
+    border: 1px solid white;
+    width: 50%;
+    position: fixed;
+    top:-10%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: top 1s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+.is_shown{
+    top:20%
+}

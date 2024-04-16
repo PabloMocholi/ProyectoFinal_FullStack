@@ -3,6 +3,7 @@ import { easyFetch } from "../../../helpers/utils"
 import { LoginContext } from "../../components/layout";
 import './perfil.css'
 
+
 const Perfil = () => {
 
     const { userData } = useContext(LoginContext);
@@ -12,6 +13,13 @@ const Perfil = () => {
     const [compras, setCompras] = useState([])
     const [usuario, setUsuario] = useState([])
     const [formData, setFormData] = useState([])
+
+    
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const ToggleModal = () => {
+        setModalOpen(!modalOpen);
+    }
 
 
     const cargarPerfil = () => {
@@ -35,6 +43,7 @@ const Perfil = () => {
             body: formData,
             callback: (data) => {
                 console.log(" actualizo datos", data)
+                ToggleModal()
 
 
             }
@@ -130,6 +139,10 @@ const Perfil = () => {
                         </>)
                     })
                 }
+            </div>
+            <div className={`Modal ${modalOpen ? 'is_shown' : ''}`}>
+                <span>Usuario actualizado</span>
+                <button onClick={ToggleModal}>cerrar</button>
             </div>
         </div>
     </>)

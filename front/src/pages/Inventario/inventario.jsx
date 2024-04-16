@@ -11,6 +11,7 @@ const Inventario = () => {
     const [isOpen, setOpen] = useState(false)
     const [pantalla, setPantalla] = useState("inventario")
 
+
     const ToggleActive = () => {
         setOpen(!isOpen);
     }

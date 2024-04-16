@@ -90,31 +90,29 @@ const Login = () => {
 
                 </div>
             </div>
-            {
-                isOpen && <>
-                    <div className="div-register">
-                        <h1>¿¡Ya casi estás!</h1>
-                        <button className="right" onClick={ToggleActive}>X</button>
-                        <form className="form-register" onSubmit={handleRegister} action="#" method="POST">
-                            <label htmlFor="user">Usuario</label>
-                            <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" />
-                            <label htmlFor="pass">Contraseña</label>
-                            <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" />
-                            <label htmlFor="mail">Email</label>
-                            <input className="u-marginBottom" onChange={handleInputChange} type="text" name="mail" id="mail" />
-                            <label htmlFor="dir">Dirección</label>
-                            <input className="u-marginBottom" onChange={handleInputChange} type="text" name="dir" id="dir" />
-                            <label htmlFor="ciudad">Ciudad</label>
-                            <input className="u-marginBottom" onChange={handleInputChange} type="text" name="ciudad" id="ciudad" />
-                            <label htmlFor="tlf">Teléfono</label>
-                            <input className="u-marginBottom" onChange={handleInputChange} type="tel" pattern="[0-9]{9}" placeholder="666666666" name="tlf" id="tlf" />
 
-                            <button className="button" type="submit" >Registrarse</button>
+            <div className={`div-register ${isOpen ? 'is_active' : ''}`}>
+                <h1>¿¡Ya casi estás!</h1>
+                <button className="right" onClick={ToggleActive}>X</button>
+                <form className="form-register" onSubmit={handleRegister} action="#" method="POST">
+                    <label htmlFor="user">Usuario</label>
+                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" />
+                    <label htmlFor="pass">Contraseña</label>
+                    <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" />
+                    <label htmlFor="mail">Email</label>
+                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="mail" id="mail" />
+                    <label htmlFor="dir">Dirección</label>
+                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="dir" id="dir" />
+                    <label htmlFor="ciudad">Ciudad</label>
+                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="ciudad" id="ciudad" />
+                    <label htmlFor="tlf">Teléfono</label>
+                    <input className="u-marginBottom" onChange={handleInputChange} type="tel" pattern="[0-9]{9}" placeholder="666666666" name="tlf" id="tlf" />
 
-                        </form>
-                    </div>
-                </>
-            }
+                    <button className="button" type="submit" >Registrarse</button>
+
+                </form>
+            </div>
+
 
 
 

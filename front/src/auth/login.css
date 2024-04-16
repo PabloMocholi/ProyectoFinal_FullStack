@@ -20,7 +20,7 @@
 
 .div-register{
     position: fixed;
-    top: 50%;
+    top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
@@ -28,7 +28,13 @@
     padding: 20px;
     border-radius: 20px;
     background-color: black;
+    transition: top 1s;
 }
+
+.is_active{
+    top: 50%;
+}
+
 .form-register{
     display: flex;
     flex-direction: column;
