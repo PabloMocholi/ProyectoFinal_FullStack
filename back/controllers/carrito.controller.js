@@ -9,37 +9,45 @@ const responseApi = {
 
 export const addCompra = async (req, res) => {
 
-    console.log(req.body)
-    const idUser = req.body[0].id
-    const albumes = req.body[1]
-    const precio = req.body[2]
+    try {
 
-    const nuevaCompra = new Compra({
+        console.log(req.body)
+        const idUser = req.body[0].id
+        const albumes = req.body[1]
+        const precio = req.body[2]
 
-        usuario: idUser,
-        albumes,
-        precio,
-        fecha: Date.now()
-    })
+        const nuevaCompra = new Compra({
 
-    const albumesActualizados = albumes.map(async (album)=>{
-        const newAlbum = await Album.findByIdAndUpdate(album._id,
-            {
-                stock: album.stock - album.cantidad
-            },
-            { new: true })
-        console.log(newAlbum)
-    })  
-    await Promise.all(albumesActualizados);
+            usuario: idUser,
+            albumes,
+            precio,
+            fecha: Date.now()
+        })
 
-    await nuevaCompra.save();
+        const albumesActualizados = albumes.map(async (album) => {
+            const newAlbum = await Album.findByIdAndUpdate(album._id,
+                {
+                    stock: album.stock - album.cantidad
+                },
+                { new: true })
+            console.log(newAlbum)
+        })
+        await Promise.all(albumesActualizados);
 
-    responseApi.data = nuevaCompra;
-    responseApi.msg = "registrada compra"
-    responseApi.status = 200
+        await nuevaCompra.save();
+
+        responseApi.data = nuevaCompra;
+        responseApi.msg = "registrada compra"
+        responseApi.status = 200
 
 
-    res.status(200).json(responseApi)
+        res.status(200).json(responseApi)
 
-  
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
+
+
+
 }
