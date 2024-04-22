@@ -34,13 +34,16 @@ const Inventario = () => {
     }, [])
 
 
+
+
+
     return (<>
         <div className='intro'>
 
             <h1>Panel de administrador</h1>
             <div className='intro-a'>
-                <a onClick={()=>setPantalla("usuario")} className={pantalla == "usuario" ? ' a active' : ' a '}>Usuarios</a>
-                <a onClick={()=>setPantalla("inventario")} className={pantalla == "inventario" ? ' a active' : ' a '}>Inventario</a>
+                <a onClick={() => setPantalla("usuario")} className={pantalla == "usuario" ? ' a active' : ' a '}>Usuarios</a>
+                <a onClick={() => setPantalla("inventario")} className={pantalla == "inventario" ? ' a active' : ' a '}>Inventario</a>
             </div>
 
         </div>
@@ -71,7 +74,6 @@ const Inventario = () => {
                     </div></>
 
         }
-
 
 
 

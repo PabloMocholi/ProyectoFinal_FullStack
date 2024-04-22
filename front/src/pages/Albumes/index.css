@@ -13,4 +13,5 @@
     bottom: 2%;
 }
 
-.content{  overflow: scroll;}
+.content{  overflow: scroll;
+flex-grow: 1;}

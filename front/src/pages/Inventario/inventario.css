@@ -54,3 +54,13 @@
     background-color: white ;
     color: black;
 }
+
+
+@media (max-width: 450px) {
+    
+    #panelInventario{
+        margin-top: 180px;
+    }
+    
+    
+}

@@ -12,6 +12,13 @@ const Carrito = ({ isOpen, ToggleActive, cargarAlbumes }) => {
     const { VITE_URL_IMGS } = import.meta.env;
     const { VITE_URL } = import.meta.env;
     const [precioTotal, setPrecioTotal] = useState(0)
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const ToggleModal = () => {
+        console.log("MODAL")
+        setModalOpen(!modalOpen);
+    }
+
 
     useEffect(() => {
         calcularTotal()
@@ -36,6 +43,7 @@ const Carrito = ({ isOpen, ToggleActive, cargarAlbumes }) => {
                 console.log(" compra realizada!", data)
                 setCarrito([])
                 ToggleActive()
+                ToggleModal()
                 cargarAlbumes();
             }
         })
@@ -96,7 +104,8 @@ const Carrito = ({ isOpen, ToggleActive, cargarAlbumes }) => {
                         </div>
                         <div className="controles">
                             <button className="controles-btn" onClick={() => eliminarElemento(album)}> - </button>
-                            <button className="controles-btn" onClick={() => addElemento(album)}> + </button>
+                            {album.stock > album.cantidad && <button className="controles-btn" onClick={() => addElemento(album)}> + </button>}
+                            
                         </div>
 
 
@@ -106,8 +115,19 @@ const Carrito = ({ isOpen, ToggleActive, cargarAlbumes }) => {
             }
 
             <span>TOTAL COMPRA: <b>{precioTotal.toFixed(2)}</b></span>
-            <button className="comprarBtn" onClick={handlePostCarrito}>COMPRAR</button>
+            {carrito.length > 0 && <button className="comprarBtn" onClick={ToggleModal}>COMPRAR</button>}
         </div>
+
+
+        <div className={`Modal ${modalOpen ? 'is_shown' : ''}`}>
+            <span>¿Desea finalizar la compra?</span>
+            <div className='Modal-botones'>
+                <button onClick={handlePostCarrito} >Comprar</button>
+                <button onClick={ToggleModal} >cerrar</button>
+            </div>
+
+        </div>
+
     </>)
 }
 

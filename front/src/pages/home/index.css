@@ -1,8 +1,15 @@
 .Home{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
 }
 
+.Home-letras{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 .tit{
     font-family: DX, 'Times New Roman', Times, serif;
@@ -13,6 +20,6 @@
 }
 
 
-  .tit.active {
+  .tit.activa {
     font-size: 900%;
   }

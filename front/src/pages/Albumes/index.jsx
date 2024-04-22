@@ -11,10 +11,16 @@ export const Albumes = () => {
 
     const [albumes, setAlbumes] = useState([])
     const [carrito, setCarrito] = useState([])
-
     const { VITE_URL } = import.meta.env;
-
     const [isOpen, setOpen] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const ToggleModal = () => {
+        setModalOpen(!modalOpen);
+    }
+
+
+
     const ToggleActive = () => {
         setOpen(!isOpen);
     }
@@ -43,13 +49,18 @@ export const Albumes = () => {
             console.log("ya en carrito")
             const nuevoCarrito = [...carrito];
 
-            nuevoCarrito[index] = {
-                ...nuevoCarrito[index],
-                cantidad: nuevoCarrito[index].cantidad + 1
-            };
+            if (nuevoCarrito[index].stock > nuevoCarrito[index].cantidad) {
 
-            setCarrito(nuevoCarrito)
-         
+                nuevoCarrito[index] = {
+                    ...nuevoCarrito[index],
+                    cantidad: nuevoCarrito[index].cantidad + 1
+                };
+
+                setCarrito(nuevoCarrito)
+            } else {
+
+                ToggleModal()
+            }
 
         } else {
             setCarrito([...carrito, { ...album, cantidad: 1 }])
@@ -77,6 +88,10 @@ export const Albumes = () => {
             }
 
         </carritoContext.Provider>
+        <div className={`Modal ${modalOpen ? 'is_shown' : ''}`}>
+            <span>No es posible añadir más productos</span>
+            <button onClick={() => ToggleModal()}>cerrar</button>
+        </div>
     </>)
 }
 

@@ -12,7 +12,7 @@ export const Home = () => {
 
     const playSound = (index) => {
 
-        switch(index){
+        switch (index) {
             case 0:
                 audioRef.current.play();
                 break;
@@ -20,7 +20,7 @@ export const Home = () => {
                 audioRef2.current.play();
                 break;
         }
-       
+
     };
 
 
@@ -36,20 +36,25 @@ export const Home = () => {
 
     return (<>
         <audio ref={audioRef}>
-                <source src={audioFile} type="audio/mpeg" />
+            <source src={audioFile} type="audio/mpeg" />
         </audio>
         <audio ref={audioRef2}>
-                <source src={audioFile2} type="audio/mpeg" />
+            <source src={audioFile2} type="audio/mpeg" />
         </audio>
 
 
         <div className='Home'>
-            {
-                titulo.map((letra, index) => (
-                    <h1 key={index} className={`tit ${letraActiva == index ? 'active' : ''}`} onClick={() => handleClick(index)}>
-                        {letra}
-                    </h1>
-                ))}
+            <div className='Home-letras'>
+
+
+                {
+                    titulo.map((letra, index) => (
+                        <h1 key={index} className={`tit ${letraActiva == index ? 'activa' : ''}`} onClick={() => handleClick(index)}>
+                            {letra}
+                        </h1>
+                    ))}
+            </div>
+            <span>¡Pulsa las letras y crea tu melodía!</span>
         </div></>
 
 

@@ -53,27 +53,28 @@ const AddAlbum = ({ isOpen, ToggleActive, cargaInventario }) => {
 
     return (<>
         <div className='AddAlbum'>
+            <h2>Datos del nuevo album:</h2>
             <button className='close' onClick={ToggleActive}>X</button>
 
             <form  onSubmit={handleCreateAlbum}>
                 <div className='row'>
                     <label htmlFor="nombre">Disco:</label>
-                    <input type="text" name="nombre" id="nombre"  value={formData.nombre} onChange={handleInputChange}   />
+                    <input type="text" name="nombre" id="nombre" required value={formData.nombre} onChange={handleInputChange}   />
                 </div>
 
                 <div className='row'>
                     <label htmlFor="artista">Artista:</label>
-                    <input type="text" name="artista" id="artista"  value={formData.artista} onChange={handleInputChange}   />
+                    <input type="text" name="artista" id="artista" required value={formData.artista} onChange={handleInputChange}   />
                 </div>
 
                 <div className='row'>
                     <label htmlFor="precio">Precio:</label>
-                    <input type="text" name="precio" id="precio" value={formData.precio} onChange={handleInputChange}   />
+                    <input type="number" name="precio" id="precio" required value={formData.precio} onChange={handleInputChange}   />
                 </div>
 
                 <div className='row'>
                     <label htmlFor="stock">Stock:</label>
-                    <input type="text" name="stock" id="stock" value={formData.stock} onChange={handleInputChange}   />
+                    <input type="number" name="stock" id="stock" required value={formData.stock} onChange={handleInputChange}   />
                 </div>
 
                 <div className='row'>

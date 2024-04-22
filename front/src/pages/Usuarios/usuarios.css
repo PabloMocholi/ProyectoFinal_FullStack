@@ -3,14 +3,23 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    overflow: auto;
+    width: 80%;
 }
 .TarjetaUsuario{
     border:  1px solid black;
     padding: 20px;
-    width: 25%;
+    width: 30%;
     text-align: left;
     background-color: black;
     border-radius: 20px;
+    height: 80px;
+    overflow: hidden;
 }
 
 .cliente{
@@ -21,4 +30,13 @@
 .TarjetaUsuario-row{
     display: flex;
     justify-content: space-between;
+}
+@media (max-width: 450px) {
+
+    .TarjetaUsuario{
+     
+        width: 90%;
+
+    }
+    
 }

@@ -8,6 +8,20 @@ const Elemento = ({ datos, cargaInventario }) => {
     const { VITE_URL_IMGS } = import.meta.env;
 
     const [formData, setFormData] = useState(datos)
+    const [modalOpen, setModalOpen] = useState(false)
+    const [modalDeleteOpen, setModalDeleteOpen] = useState(false)
+    const [modalText, setModalText] = useState("")
+
+    const ToggleModal = (texto) => {
+        console.log("MODAL")
+        setModalText(texto);
+        setModalOpen(!modalOpen);
+    }
+
+    const ToggleDeleteModal = (texto) => {
+        setModalDeleteOpen(!modalDeleteOpen);
+    }
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
@@ -23,13 +37,11 @@ const Elemento = ({ datos, cargaInventario }) => {
 
         console.log(formData)
         const newformData = new FormData();
-
         newformData.append('nombre', formData.nombre);
         newformData.append('artista', formData.artista);
         newformData.append('precio', formData.precio);
         newformData.append('stock', formData.stock);
         newformData.append('imagen', formData.imagen);
-
         console.log(newformData)
 
         /*  easyFetch({
@@ -47,22 +59,25 @@ const Elemento = ({ datos, cargaInventario }) => {
         }).then(response => response.json())
             .then(data => {
                 //console.log(" actualizado cn exito!", data)
-                cargaInventario() 
+                ToggleModal("Inventario actualizado")
+                cargaInventario()
             })
 
     }
 
-    const handleDeleteAlbum = ()=>{
+    const handleDeleteAlbum = () => {
 
         easyFetch({
-        url: `${VITE_URL}/inventario/${_id}`,
-        method: "DELETE",
-        body: formData,
-        callback: (data) => {
-            console.log(" borrado cn exito!", data)
-            cargaInventario()
-        }
-    }) 
+            url: `${VITE_URL}/inventario/${_id}`,
+            method: "DELETE",
+            body: formData,
+            callback: (data) => {
+                console.log(" borrado cn exito!", data)
+                cargaInventario()
+
+
+            }
+        })
 
     }
 
@@ -82,26 +97,43 @@ const Elemento = ({ datos, cargaInventario }) => {
                         </div>
                         <div className='row'>
                             <label htmlFor="precio">Precio:</label>
-                            <input type="text" name="precio" id="precio" value={formData.precio} onChange={handleInputChange} />
+                            <input type="number" name="precio" id="precio" value={formData.precio} onChange={handleInputChange} />
                         </div>
                         <div className='row'>
                             <label htmlFor="stock">Stock:</label>
-                            <input type="text" name="stock" id="stock" value={formData.stock} onChange={handleInputChange} />
+                            <input type="number" name="stock" id="stock" value={formData.stock} onChange={handleInputChange} />
                         </div>
                         <div className='row'>
                             <label htmlFor="imagen">Nueva imagen:</label>
-                            <input type="file" name="imagen" id="imagen"  onChange={handleImageChange}  />
+                            <input type="file" name="imagen" id="imagen" onChange={handleImageChange} />
                         </div>
 
                     </form>
                 </div>
 
                 <button className='update' onClick={handleUpdateAlbum}>actualizar</button>
-                <button className='delete' onClick={handleDeleteAlbum}>eliminar</button>
+                <button className='delete' onClick={ToggleDeleteModal}>eliminar</button>
             </div>
 
 
         </div>
+
+
+        <div className={`Modal ${modalOpen ? 'is_shown' : ''}`}>
+            <span>{modalText}</span>
+            <button onClick={() => ToggleModal("Inventario actualizado")}>cerrar</button>
+        </div>
+
+        <div className={`Modal ${modalDeleteOpen ? 'is_shown' : ''}`}>
+            <span>¡Estás a punto de eliminar un elemento de forma permanente!</span>
+            <div className='Modal-botones'>
+                <button onClick={() => ToggleDeleteModal("")}>Cerrar</button>
+                <button className='delete--button' onClick={handleDeleteAlbum}>Eliminar</button>
+            </div>
+
+        </div>
+
+
     </>)
 }
 

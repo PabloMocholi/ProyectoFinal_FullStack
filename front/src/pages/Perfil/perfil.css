@@ -89,7 +89,7 @@
     top:-10%;
     left:50%;
     transform: translate(-50%, -50%);
-    transition: top 1s;
+    transition: top 0.6s;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -100,4 +100,16 @@
 
 .is_shown{
     top:20%
+}
+
+@media (max-width: 450px) {
+    .Compra-imgs{
+        display: flex;
+        justify-content: start;
+        margin: 20px;
+        overflow: auto;
+
+    
+    
+    }
 }

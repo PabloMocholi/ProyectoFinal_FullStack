@@ -31,6 +31,7 @@ export const actualizarAlbum = async (req, res) => {
         const { nombre, artista, precio, stock } = req.body
         const { id } = req.params
         let albumEditado
+        console.log(precio,stock)
 
         if (req.file) {
             albumEditado = await Album.findByIdAndUpdate(id,
@@ -72,43 +73,60 @@ export const actualizarAlbum = async (req, res) => {
 
 
 export const newAlbum = async (req, res) => {
-    console.log("Añado album")
-    console.log("body", req.body)
-    console.log(req.file)
 
-    const { nombre, artista, precio, stock } = req.body
-    const imagen = req.file.originalname;
+    try {
+        console.log("Añado album")
+        console.log("body", req.body)
+        console.log(req.file)
 
-    const nuevoAlbum = new Album({
+        const { nombre, artista, precio, stock } = req.body
+        let imagen
 
-        nombre,
-        artista,
-        imagen,
-        stock,
-        precio,
-        created_at: Date.now()
-    })
+        if (req.file)
+            imagen = req.file.originalname;
+        else
+            imagen = "noImage.jpg"
 
-    await nuevoAlbum.save();
+        const nuevoAlbum = new Album({
 
-    responseApi.data = nuevoAlbum;
-    responseApi.msg = "creado album"
-    responseApi.status = 200
+            nombre,
+            artista,
+            imagen,
+            stock,
+            precio,
+            created_at: Date.now()
+        })
 
-    res.status(200).json(responseApi)
+        await nuevoAlbum.save();
+
+        responseApi.data = nuevoAlbum;
+        responseApi.msg = "creado album"
+        responseApi.status = 200
+
+        res.status(200).json(responseApi)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
 };
 
-export const deleteAlbum= async (req, res) => {
+export const deleteAlbum = async (req, res) => {
 
-    const {id} = req.params
+    try {
+        const { id } = req.params
 
-    const albumEliminado = await Album.findByIdAndDelete(id)
+        const albumEliminado = await Album.findByIdAndDelete(id)
 
-    responseApi.data = albumEliminado
-    responseApi.msg = "album eliminado"
-    responseApi.status = 200
+        responseApi.data = albumEliminado
+        responseApi.msg = "album eliminado"
+        responseApi.status = 200
 
-    res.status(200).json(responseApi)
-   
+        res.status(200).json(responseApi)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
+
+
 };
 

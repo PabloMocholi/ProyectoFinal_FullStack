@@ -16,7 +16,7 @@ export const Album = ({ datos}) => {
     }
 
     const procesarCompra = (album)=>{
-
+        console.log(carrito)
         ToggleActive()
         addToCarrito(album)
 
@@ -37,8 +37,10 @@ export const Album = ({ datos}) => {
                         <h2 className='h2'>{nombre}</h2>
                         <h4 className='h4'>{artista}</h4>
                     </div>
-
-                    <span className='precio'>{precio}€</span>
+                    {
+                        stock > 0 &&  <span className='precio'>{precio}€</span>
+                    }
+                   
 
                 </div>
             </div>
@@ -69,7 +71,7 @@ const AlbumLightBox = ({ ToggleActive, datos, procesarCompra }) => {
 
             <div className='AlbumL-data'>
                 <div >
-                    <img className='img' src={`${VITE_URL_IMGS}${imagen}`} alt="" />
+                    <img className='img imgL' src={`${VITE_URL_IMGS}${imagen}`} alt="" />
 
                 </div>
 
@@ -87,10 +89,8 @@ const AlbumLightBox = ({ ToggleActive, datos, procesarCompra }) => {
 
                 </div>
             </div>
-            <button onClick={()=>procesarCompra(datos)}>Añadir a carrito</button>
-
-
-            <span className='buttonClose' onClick={ToggleActive}>CLOSE</span>
+            <button className='buttonAddCarrito' onClick={()=>procesarCompra(datos)}>Añadir a carrito</button>
+            <span className='buttonClose' onClick={ToggleActive}>X</span>
 
 
         </div>

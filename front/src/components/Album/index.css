@@ -6,6 +6,7 @@
     width: 80%;
     border-radius: 20px;
     box-shadow: 1px 5px 10px black ;
+    cursor: pointer;
   
 
 }
@@ -18,6 +19,10 @@
     border-radius: 20px;
     box-shadow: 1px 5px 10px black ;
     filter: grayscale(100%);
+    color: red;
+    text-shadow: 0.5px 0 #fff, -0.5px 0 #fff, 0 0.5px #fff, 0 -0.5px #fff,
+    0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+    font-size: 110%;
 
 }
 
@@ -46,6 +51,8 @@
 .Album-info-top{
     display: flex;
     flex-direction: column;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+    0.5px 1px #000, -1px -1px #000,1px -1px #000, -1px 1px #000;
 
 }
 
@@ -114,12 +121,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: black;
+    color: white;
     z-index: 1;
     display: flex;
     flex-direction: column;
     padding: 20px;
     justify-content: center;
+    background-color: black;
+    border-radius: 20px;
    
 }
 
@@ -138,10 +147,17 @@
     justify-content: space-around;
    
 }
+.buttonAddCarrito{
+    background-color: rgba(156, 0, 218, 1);
+}
 .buttonClose{
     position: fixed;
     top: 2%;
-    right:2%
+    right:2%;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 20px;
+    width: 40px;
 }
 
 .h2L{
@@ -149,8 +165,6 @@
     font-size: 300%;
     padding-top: 20px;
 }
-
-
 
 
 .u-blur{
@@ -189,6 +203,14 @@
     .img{
         width: 20%;
     }
+
+    .AlbumL-data{
+       flex-direction: column;
+      
+    }
+
+    .imgL{width: 80%;}
+    
 }
 
 /**/
