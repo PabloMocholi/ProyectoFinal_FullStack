@@ -50,7 +50,7 @@ export const Home = () => {
         </audio>
 
         {
-            isLoaded ? <> <div className='Home'>
+            isLoaded ? <> <div className='Home u-center'>
                 <div className='Home-letras'>
 
 

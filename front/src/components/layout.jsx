@@ -28,8 +28,9 @@ export const Layout = () => {
                     <Navigation />
                     <div className='content '>
                         <Outlet />
-                        { !userData.is_admin && <Footer/> }
+                       
                     </div>
+                    { !userData.is_admin && <Footer/> }
 
                   
                     

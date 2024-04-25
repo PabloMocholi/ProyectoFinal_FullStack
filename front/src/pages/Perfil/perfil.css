@@ -86,7 +86,7 @@
     border: 1px solid white;
     width: 50%;
     position: fixed;
-    top:-10%;
+    top:-20%;
     left:50%;
     transform: translate(-50%, -50%);
     transition: top 0.6s;

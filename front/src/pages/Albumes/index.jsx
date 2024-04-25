@@ -14,6 +14,11 @@ export const Albumes = () => {
     const { VITE_URL } = import.meta.env;
     const [isOpen, setOpen] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
+    const [buscador, setBuscador] = useState("")
+
+    const actualizoBuscador = (e) => {
+        setBuscador(e.target.value);
+    }
 
     const ToggleModal = () => {
         setModalOpen(!modalOpen);
@@ -68,15 +73,23 @@ export const Albumes = () => {
         }
     }
 
+    const  albumesFiltrados = albumes.filter((album) => {
+
+      return(album.nombre.toLowerCase().includes(buscador.toLowerCase()) )
+
+
+    });
+
 
     return (<>
 
         <carritoContext.Provider value={{ carrito, setCarrito, addToCarrito }}>
             <button className='carritoBtn' onClick={ToggleActive}><i class="fa-solid fa-cart-shopping"></i></button>
+            <input type="text" name="buscador" id="buscador" placeholder="Buscador" onChange={actualizoBuscador} />
             <div className='Albumes'>
-
+               
                 {
-                    albumes && albumes.map(album => {
+                    albumes && albumesFiltrados.map(album => {
                         return (<>
                             <Album key={album._id} datos={album} />
                         </>)
