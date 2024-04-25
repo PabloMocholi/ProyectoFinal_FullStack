@@ -1,25 +1,40 @@
-.Home{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.Home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
 }
 
-.Home-letras{
+.Home-letras {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.tit{
-    font-family: DX, 'Times New Roman', Times, serif;
-    font-size: 800%;
-    font-weight: 100;
-    cursor: pointer;
-    transition: font-size 0.3s ease;
+.tit {
+  font-family: DX, 'Times New Roman', Times, serif;
+  font-size: 800%;
+  font-weight: 100;
+  cursor: pointer;
+  transition: font-size 0.3s ease;
 }
 
 
-  .tit.activa {
-    font-size: 900%;
-  }
+.tit.activa {
+  font-size: 900%;
+}
+
+.Loading {
+
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(156, 0, 218, 1) 100%);
+  z-index: 1;
+}
+
+.u-center{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

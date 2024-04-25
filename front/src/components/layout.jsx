@@ -9,6 +9,8 @@ export const LoginContext = createContext([]);
 export const Layout = () => {
     const [isLoged, setIsLoged] = useState(false)
     const [userData, setUserData] = useState({})
+    const [isLoaded, setLoaded] = useState(false)
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -20,7 +22,7 @@ export const Layout = () => {
 
 
     return (<>
-        <LoginContext.Provider value={{isLoged, setIsLoged, userData, setUserData}}>
+        <LoginContext.Provider value={{isLoged, setIsLoged, userData, setUserData, isLoaded, setLoaded}}>
             {
                 isLoged ? <>
                     <Navigation />

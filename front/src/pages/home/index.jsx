@@ -1,14 +1,21 @@
 import './index.css'
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
+import { LoginContext } from "../../components/layout.jsx";
 import audioFile from '../../audios/1.mp3';
 import audioFile2 from '../../audios/1.mp3';
 
 export const Home = () => {
     const [letraActiva, setLetraActiva] = useState();
     const titulo = ['B', 'i', 'e', 'n', 'v', 'e', 'n', 'i', 'd', 'o']
+    const { isLoaded, setLoaded } = useContext(LoginContext)
 
     const audioRef = useRef(null);
     const audioRef2 = useRef(null);
+
+    useEffect(() => {
+        console.log(isLoaded)
+        setTimeout(() => { setLoaded(true) }, 2000)
+    }, [])
 
     const playSound = (index) => {
 
@@ -42,20 +49,36 @@ export const Home = () => {
             <source src={audioFile2} type="audio/mpeg" />
         </audio>
 
+        {
+            isLoaded ? <> <div className='Home'>
+                <div className='Home-letras'>
 
-        <div className='Home'>
-            <div className='Home-letras'>
+
+                    {
+                        titulo.map((letra, index) => (
+                            <h1 key={index} className={`tit ${letraActiva == index ? 'activa' : ''}`} onClick={() => handleClick(index)}>
+                                {letra}
+                            </h1>
+                        ))}
+                </div>
+                <span>¡Pulsa las letras y crea tu melodía!</span>
+            </div></> : <>
+                <div className='Loading u-center'>
+                    <div className='u-center'>
+                        <h2>Cargando...</h2>
+                        <img src="./images/load.gif" alt="load_gif" />
+                    </div>
+
+                </div>
+
+            </>
+        }
 
 
-                {
-                    titulo.map((letra, index) => (
-                        <h1 key={index} className={`tit ${letraActiva == index ? 'activa' : ''}`} onClick={() => handleClick(index)}>
-                            {letra}
-                        </h1>
-                    ))}
-            </div>
-            <span>¡Pulsa las letras y crea tu melodía!</span>
-        </div></>
+
+
+
+    </>
 
 
     );
