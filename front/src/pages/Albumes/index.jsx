@@ -85,16 +85,18 @@ export const Albumes = () => {
 
         <carritoContext.Provider value={{ carrito, setCarrito, addToCarrito }}>
             <button className='carritoBtn' onClick={ToggleActive}><i class="fa-solid fa-cart-shopping"></i></button>
-            <input type="text" name="buscador" id="buscador" placeholder="Buscador" onChange={actualizoBuscador} />
+            <input type="text" name="buscador" id="buscador" placeholder="Busca por nombre de disco..." onChange={actualizoBuscador} className='buscador' />
             <div className='Albumes'>
                
                 {
-                    albumes && albumesFiltrados.map(album => {
+                    albumes && albumesFiltrados.length > 0?
+                    <>
+                    {albumesFiltrados.map(album => {
                         return (<>
                             <Album key={album._id} datos={album} />
                         </>)
-                    })
-                }
+                    })}</> : <span>No hay coincidencias</span>
+                    }
 
             </div>{
                 <Carrito isOpen={isOpen} ToggleActive={ToggleActive} cargarAlbumes={cargarAlbumes} />

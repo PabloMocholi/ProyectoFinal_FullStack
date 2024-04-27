@@ -11,6 +11,7 @@ const Login = () => {
     const [formData, setFormData] = useState({})
     const { isLoged, setIsLoged, setUserData } = useContext(LoginContext);
     const [isOpen, setOpen] = useState(false)
+    
 
 
     const ToggleActive = () => {

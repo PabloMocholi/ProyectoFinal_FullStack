@@ -77,24 +77,24 @@ const Perfil = () => {
                         <form className="FormPerfil">
                             <h2 className="Tit">TUS DATOS:</h2>
                             <div className="FormPerfil-row">
-                                <label htmlFor="nombre">Nombre de usuario:</label>
+                                <label className="FormPerfil-label" htmlFor="nombre">Nombre de usuario:</label>
                                 <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} id="nombre" />
 
                             </div>
                             <div className="FormPerfil-row">
-                                <label htmlFor="email">Email:</label>
+                                <label className="FormPerfil-label" htmlFor="email">Email:</label>
                                 <input type="text" name="email" value={formData.email} onChange={handleInputChange} id="email" />
                             </div>
                             <div className="FormPerfil-row">
-                                <label htmlFor="telefono">Teléfono:</label>
+                                <label className="FormPerfil-label" htmlFor="telefono">Teléfono:</label>
                                 <input type="text" name="telefono" value={formData.telefono} onChange={handleInputChange} id="telefono" />
                             </div>
                             <div className="FormPerfil-row">
-                                <label htmlFor="direccion">Dirección:</label>
+                                <label className="FormPerfil-label" htmlFor="direccion">Dirección:</label>
                                 <input type="text" name="direccion" value={formData.direccion} onChange={handleInputChange} id="direccion" />
                             </div>
                             <div className="FormPerfil-row">
-                                <label htmlFor="ciudad">Ciudad:</label>
+                                <label className="FormPerfil-label" htmlFor="ciudad">Ciudad:</label>
                                 <input type="text" name="ciudad" value={formData.ciudad} onChange={handleInputChange} id="ciudad" />
                             </div>
                         </form>

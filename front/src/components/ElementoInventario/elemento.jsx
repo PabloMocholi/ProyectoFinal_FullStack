@@ -11,6 +11,7 @@ const Elemento = ({ datos, cargaInventario }) => {
     const [modalOpen, setModalOpen] = useState(false)
     const [modalDeleteOpen, setModalDeleteOpen] = useState(false)
     const [modalText, setModalText] = useState("")
+    const [cambio, setCambio] = useState(false)
 
     const ToggleModal = (texto) => {
         console.log("MODAL")
@@ -25,6 +26,7 @@ const Elemento = ({ datos, cargaInventario }) => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
+        setCambio(true)
         setFormData({ ...formData, [name]: value })
     }
 
@@ -36,6 +38,7 @@ const Elemento = ({ datos, cargaInventario }) => {
     const handleUpdateAlbum = () => {
 
         console.log(formData)
+        setCambio(false)
         const newformData = new FormData();
         newformData.append('nombre', formData.nombre);
         newformData.append('artista', formData.artista);
@@ -58,7 +61,7 @@ const Elemento = ({ datos, cargaInventario }) => {
             body: newformData
         }).then(response => response.json())
             .then(data => {
-                //console.log(" actualizado cn exito!", data)
+                console.log(" actualizado cn exito!", data)
                 ToggleModal("Inventario actualizado")
                 cargaInventario()
             })
@@ -111,7 +114,7 @@ const Elemento = ({ datos, cargaInventario }) => {
                     </form>
                 </div>
 
-                <button className='update' onClick={handleUpdateAlbum}>actualizar</button>
+                <button className={` ${!cambio? 'disabled': 'update'}`} onClick={handleUpdateAlbum} disabled={!cambio}>actualizar</button>
                 <button className='delete' onClick={ToggleDeleteModal}>eliminar</button>
             </div>
 

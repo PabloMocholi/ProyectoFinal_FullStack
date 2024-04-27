@@ -15,12 +15,15 @@
     width: 45%;
     font-size: 130%
 }
+
+
 .Compras{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     margin-top: 30px;
+    margin-bottom: 30px;
 
    
 
@@ -112,4 +115,8 @@
     
     
     }
+    .FormPerfil-label{
+        height: 65px;
+    }
+    
 }
