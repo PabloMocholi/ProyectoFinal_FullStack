@@ -34,7 +34,7 @@
 }
 @media (min-width: 360px) and (max-width: 1024px){
     .ListaTarjetasUsuario{
-        height: 550px;
+        height: 460px;
     }
 
     .TarjetaUsuario{
