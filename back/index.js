@@ -13,6 +13,7 @@ connection();
 app.use(express.json())
 app.use(cors());
 app.use('/imgs', express.static('uploads'));
+app.use('/', express.static('public'));
 app.use(express.urlencoded({extended:true}))
 
 
