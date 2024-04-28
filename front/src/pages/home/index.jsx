@@ -75,11 +75,10 @@ export const Home = () => {
 
     const handleClick = (index) => {
         setLetraActiva(index);
-        //Reproducir sonido
         playSound(index)
         setTimeout(() => {
             setLetraActiva();
-        }, 2000); // Tiempo de la transición en milisegundos
+        }, 2000);
     };
 
     return (<>
@@ -133,7 +132,7 @@ export const Home = () => {
                 <div className='Loading u-center'>
                     <div className='u-center'>
                         <h2>Cargando...</h2>
-                        <img src="./images/load.gif" alt="load_gif" />
+                        <img src="/load.gif" alt="load_gif" />
                     </div>
 
                 </div>
