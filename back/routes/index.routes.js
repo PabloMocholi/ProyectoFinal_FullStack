@@ -5,12 +5,13 @@ import { addCompra } from "../controllers/carrito.controller.js";
 import multer from 'multer';
 import { getPerfil, updatePerfil } from "../controllers/perfil.controller.js";
 import { getUsuarios } from "../controllers/usuarios.controller.js";
+import { DIR_PUBLIC } from "../config/config.js";
 
 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../front/public')
+      cb(null, DIR_PUBLIC)
     },
     filename: function (req, file, cb) {
       cb(null, `${file.originalname}`)
