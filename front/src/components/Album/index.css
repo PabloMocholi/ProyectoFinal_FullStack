@@ -172,7 +172,7 @@
 }
 /*----------*/
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .Album-content{
       
         flex-direction: column;
@@ -204,13 +204,54 @@
         width: 20%;
     }
 
+    .AlbumL{
+        width: 80%;
+    
+       
+    }
+    
+
     .AlbumL-data{
        flex-direction: column;
       
     }
 
     .imgL{width: 80%;}
+
+    .h2L{
+        font-size:250%;
+
+    }
     
+}
+
+@media (min-width: 481px)  and (max-width: 1024px) {
+  
+    .h2{
+   
+        font-size: 160%;
+    }
+
+    
+    .precio{
+        font-size: 80%;
+        position: absolute;
+        right: -10%;
+        width: 100px;
+        bottom: -5%;
+        right: 0%;
+
+    
+    }
+
+    .imgL{width: 80%;}
+
+    .AlbumL-data{
+    flex-direction: column;
+    }
+    
+
+
 }
 
 /**/

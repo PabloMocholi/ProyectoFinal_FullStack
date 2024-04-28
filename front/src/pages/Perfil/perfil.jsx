@@ -9,13 +9,11 @@ const Perfil = () => {
     const { userData } = useContext(LoginContext);
     const { VITE_URL } = import.meta.env;
     const { VITE_URL_IMGS } = import.meta.env;
-
     const [compras, setCompras] = useState([])
     const [usuario, setUsuario] = useState([])
     const [formData, setFormData] = useState([])
-
-    
     const [modalOpen, setModalOpen] = useState(false)
+    const [cambio, setCambio] = useState(false)
 
     const ToggleModal = () => {
         setModalOpen(!modalOpen);
@@ -43,6 +41,7 @@ const Perfil = () => {
             body: formData,
             callback: (data) => {
                 console.log(" actualizo datos", data)
+                setCambio(false)
                 ToggleModal()
 
 
@@ -65,6 +64,7 @@ const Perfil = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
+        setCambio(true)
         setFormData({ ...formData, [name]: value })
     }
 
@@ -98,7 +98,7 @@ const Perfil = () => {
                                 <input type="text" name="ciudad" value={formData.ciudad} onChange={handleInputChange} id="ciudad" />
                             </div>
                         </form>
-                        <button onClick={handleUpdatePerfil}>Actualizar perfil</button>
+                        <button className={` ${!cambio? 'disabled': 'update'}`} onClick={handleUpdatePerfil} disabled={!cambio}>Actualizar perfil</button>
 
 
                     </>

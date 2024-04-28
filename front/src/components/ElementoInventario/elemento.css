@@ -56,5 +56,6 @@
 .disabled{
     background-color: gray;
     color:black;
+    cursor: default;
 }
 
