@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-export const PORT = process.env.PORT || 3000
+export const PORT = process.env.PORT || 8080
 
 export const domain = process.env.DOMAIN ||  "http://localhost"
 
