@@ -1,3 +1,13 @@
+/**---------------------------------------- 
+ * @controller {usuarios.controller}
+ * 
+ * Controlador para obtener la información de todos los usuarios
+ * 
+ *  @endpoint {GET} /usuarios  --> mustra todos los usuarios registrados
+ * 
+--------------------------------------------*/
+
+
 
 import { Usuario, Album, Compra } from "../db/schemas.js";
 

@@ -1,3 +1,13 @@
+/**---------------------------------------- 
+ * @controller {perfil.controller}
+ * 
+ * Controladores para la gestión de la información de un perfil
+ * 
+ * @endpoint {GET} /perfil/:id  --> obtiene los datos del perfil y sus compras
+ * @endpoint {PUT} /perfil:id  --> actualiza los datos del perfil
+ * 
+--------------------------------------------*/
+
 
 import { Usuario, Album, Compra } from "../db/schemas.js";
 

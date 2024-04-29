@@ -1,3 +1,15 @@
+/**---------------------------------------- 
+ * @controller {albumes.controller}
+ * 
+ * Controladores para la gestión de los albumes
+ * 
+ * @endpoint {GET} /albumes  --> muestra todos los albumes de la BBD
+ * @endpoint {PUT} /inventario:id  --> actualiza la información de un album
+ * @endpoint {POST} /inventario  --> añade un nuevo album a la BBDD
+ * @endpoint {DELETE} /inventario:id  --> elimina un album de la BBDD
+ * 
+--------------------------------------------*/
+
 import { response } from "express"
 import { Album } from "../db/schemas.js"
 import multer from 'multer'

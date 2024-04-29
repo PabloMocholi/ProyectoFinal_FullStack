@@ -1,3 +1,12 @@
+/**---------------------------------------- 
+ * @controller {carrito.controller}
+ * 
+ * Controlador para la gestión de las compras
+ * 
+ * @endpoint {POST} /carrito  --> registra la compra 
+ * 
+--------------------------------------------*/
+
 import { Album, Compra } from "../db/schemas.js";
 
 const responseApi = {

@@ -1,3 +1,7 @@
+/**
+ * Función encargada de conectar con la BBDD de Mongo
+ */
+
 import mongoose from 'mongoose'
 import { DB_MONGO } from '../config/config.js'
 

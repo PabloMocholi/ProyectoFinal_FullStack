@@ -1,3 +1,14 @@
+/**---------------------------------------- 
+ * API EXPRESS
+ * 
+ * Configuraciones para poder crear nuestra API
+ * 
+ * @middelwares {cors, express.json, express.static, express.urlencoded}
+ * @endpoint {/} [get]
+ * 
+--------------------------------------------*/
+
+
 import express from 'express'
 import cors from 'cors'
 import indexRouter from './routes/index.routes.js'

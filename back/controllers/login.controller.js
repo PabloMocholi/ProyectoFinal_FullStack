@@ -1,3 +1,14 @@
+/**---------------------------------------- 
+ * @controller {login.controller}
+ * 
+ * Controladores para la gestión del logeo y registro de usuarios
+ * 
+ * @endpoint {POST} /getUser  --> consulta si el usuario existe y lo devuelve
+ * @endpoint {POST} /registerUser  --> registra un nuevo usuario en la BBDD
+ * 
+--------------------------------------------*/
+
+
 import connection from '../db/mongo.db.js'
 import bcrypt from 'bcrypt'
 import { Usuario } from '../db/schemas.js'

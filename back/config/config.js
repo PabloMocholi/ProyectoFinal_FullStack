@@ -1,3 +1,11 @@
+
+/**---------------------------------------- 
+ * API EXPRESS
+ * 
+ * Configuraciones de las variables de entorno para poder 
+ * acceder a la BBDD de Mongo
+ * 
+--------------------------------------------*/
 import dotenv from 'dotenv'
 
 dotenv.config()
