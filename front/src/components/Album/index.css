@@ -1,3 +1,33 @@
+/*
+
+
+    index.css --> no se usa el nombre de album.css porque se quería probar que era posible tener varios index.css, 
+    para mostrar la capacidad de reutilización de componentes
+
+    CSS para index.jsx (lo que podría ser album.jsx)
+
+    
+    - Album
+    - Album--disabled
+    - Album:hover
+    - Album-content
+    - Album-info
+    - Album-info-top
+    - Album-info-bottom
+    - precio
+    - background-img
+    - agotado
+    - img
+    - h2
+    - h4
+    - AlbumL
+    - AlbumL-data
+    - AlbumL-info-bottom
+    - buttonAddCarrito
+    - buttonClose
+    - h2L
+    - u-blur
+*/
 
 .Album{
 
@@ -18,10 +48,10 @@
     width: 80%;
     border-radius: 20px;
     box-shadow: 1px 5px 10px black ;
-    filter: grayscale(100%);
+    filter: grayscale(100%); /* establece el color en escala de grises negro --> blanco */
     color: red;
     text-shadow: 0.5px 0 #fff, -0.5px 0 #fff, 0 0.5px #fff, 0 -0.5px #fff,
-    0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+    0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff; /* rodea las letras de un borde blanco fino*/
     font-size: 110%;
 
 }
@@ -52,7 +82,7 @@
     display: flex;
     flex-direction: column;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-    0.5px 1px #000, -1px -1px #000,1px -1px #000, -1px 1px #000;
+    0.5px 1px #000, -1px -1px #000,1px -1px #000, -1px 1px #000; /* rodea las letras de un borde negro fino*/
 
 }
 
@@ -120,7 +150,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); /* centra el elemento */
     color: white;
     z-index: 1;
     display: flex;
@@ -170,7 +200,8 @@
 .u-blur{
     filter: blur(20px);
 }
-/*----------*/
+
+/* Media querys para móviles*/
 
 @media (max-width: 480px) {
     .Album-content{
@@ -225,6 +256,8 @@
     
 }
 
+/* Media querys para pantallas medianas*/
+
 @media (min-width: 481px)  and (max-width: 1024px) {
   
     .h2{
@@ -254,5 +287,4 @@
 
 }
 
-/**/
 

@@ -1,3 +1,23 @@
+/*
+
+    carrito.css
+
+    CSS de carrito.jsx
+
+    - Carrito
+    - limit
+    - itemCarrito
+    - itemCarrito-img
+    - itemCarrito-datos
+    - closeCarrito
+    - comprarBtn
+    - controles
+    - controles-btn
+    - is-active
+    - u-bold
+
+*/
+
 .Carrito{
     position: fixed;
     right: -35%;

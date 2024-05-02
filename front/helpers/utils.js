@@ -1,3 +1,16 @@
+/**
+ * 
+ *  Función que se encarga de realizar el fetch a la url proporcionada
+ *  
+ *  @param {String} url Url a la que realizar la request
+ *  @param {String} method Método que usa la llamada
+ *  @param {Object} url Cuerpo de la petición 
+ *  @param {Number} timeout Tiempo en ms que la petición está activa
+ *  @param {Function} callback función de callback que se ejecuta al completar la petición
+ * 
+ */
+
+
 export const easyFetch = async ({
     url, method = "GET", body = null, timeout = 5000, callback = null
 }) => {

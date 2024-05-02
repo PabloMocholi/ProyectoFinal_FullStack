@@ -11,6 +11,16 @@ import Inventario from './pages/Inventario/inventario'
 import Perfil from './pages/Perfil/perfil'
 import Usuarios from './pages/Usuarios/usuarios'
 
+/**
+ * 
+ * React-Router
+ * @route {/l} Carga el componente <Layout/> que dependiendo de la url carga:
+ *  @route {/login} Carga el componente <Login/>
+ *  @route {/home} Carga el componente <Home />
+ *  @route {/albumes} Carga el componente <Albumes />
+ *  @route {/inventario} Carga el componente <Inventario />
+ *  @route {/perfil} Carga el componente <Perfil />
+ */
 function App() {
 
   const [count, setCount] = useState(0)

@@ -1,3 +1,23 @@
+/*
+
+    elemento.css
+
+    CSS de elemento.jsx
+
+    - elemento
+    - Modal-botones
+    - column
+    - column-data
+    - update
+    - delete
+    - delete--button
+    - delete:hover
+    - update:hover
+    - disabled
+
+*/
+
+
 .elemento{
     display: flex;
     border: 1px solid black;
@@ -8,11 +28,6 @@
     flex-direction: column;
     border-radius: 20px;
 }
-
-/* .img{
-    width: 300px;
-    height: 300px;
-} */
 
 .Modal-botones{
     display:flex;

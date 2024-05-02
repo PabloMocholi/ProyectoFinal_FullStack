@@ -1,3 +1,13 @@
+/*
+  CSS por defecto creado por Vite, pero con ciertasd modifiaciones
+  - root 
+  - body 
+  - button 
+  - button:hover 
+  - font-face 
+
+*/
+
 #root {
   display: flex;
   flex-direction: column;
@@ -50,6 +60,8 @@ body {
 }
 
 /*-------------*/
+
+
 .button {
   background-color: #9C00DA;
 }
@@ -60,6 +72,7 @@ body {
   border: 1px solid white;
 }
 
+/* añadida una fuente nueva*/
 @font-face {
   font-family: DX;
   src: url("./fonts/DXRigraf-SemiBold.otf");

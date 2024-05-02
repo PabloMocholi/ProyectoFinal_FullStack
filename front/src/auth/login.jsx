@@ -4,23 +4,41 @@ import { useNavigate } from "react-router-dom"
 import { LoginContext } from "../components/layout.jsx";
 import './login.css'
 
-
+/**
+ * 
+ * Componente que carga el formulario de inicio
+ * @hook {useState} recoge los datos del formulario
+ * @hook {useContext} maneja los datos del usuario registrado
+ * @hook {useState} indica si se muestra o no el formulario de registro
+ * 
+ */
 
 const Login = () => {
 
     const [formData, setFormData] = useState({})
     const { isLoged, setIsLoged, setUserData } = useContext(LoginContext);
     const [isOpen, setOpen] = useState(false)
-    
 
-
+    /**
+     *  Función que muestra u oculta el formulario de registro
+     */
     const ToggleActive = () => {
         setOpen(!isOpen);
     }
 
+    //API a la que se realiza el request
     const { VITE_URL } = import.meta.env;
 
+    /* Permite la redirección a otra página*/
     const navegador = useNavigate()
+
+
+    /**
+     * 
+     *  Función que se encarga de mantener las variables del form actualizadas
+     *  
+     *  @param {event} e evento que se produce
+     */
 
     const handleInputChange = (e) => {
         console.log("inputchage")
@@ -29,6 +47,12 @@ const Login = () => {
         console.log(formData)
     }
 
+    /**
+     * 
+     *  Función que se encarga de realizar el fetch a la url proporcionada y redirecciona según el rol
+     *  
+     *  @param {event} event evento que se produce
+    */
     const handleLogin = (event) => {
         event.preventDefault();
         easyFetch({
@@ -52,12 +76,18 @@ const Login = () => {
                         is_admin: data[0].is_admin
                     })
                 } else {
-                    //   alert("Usuario incorrecto")
+                    alert("Inténtalo otra vez, revisa tu conexión o tus credenciales")
                 }
             }
         })
     }
 
+    /**
+     * 
+     *  Función que se encarga de registrar un nuevo usuario
+     *  
+     *  @param {event} event evento que se produce
+    */
     const handleRegister = (event) => {
         event.preventDefault();
         console.log("handleLogin")
@@ -75,13 +105,14 @@ const Login = () => {
 
     return (
         <>
+            {/** Formulario de inicio de sesión */}
             <div className="Login">
                 <h1>RE-PLAY</h1>
                 <form className="form" onSubmit={handleLogin} action="#" method="POST">
                     <label htmlFor="user">Usuario</label>
-                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" />
+                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" required />
                     <label htmlFor="pass">Contraseña</label>
-                    <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" />
+                    <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" required/>
                     <button className="button" type="submit" >Login</button>
 
                 </form>
@@ -92,6 +123,7 @@ const Login = () => {
                 </div>
             </div>
 
+            {/** Formulario de registro */}
             <div className={`div-register ${isOpen ? 'is_active' : ''}`}>
                 <h1>¿¡Ya casi estás!</h1>
                 <button className="right" onClick={ToggleActive}>X</button>
@@ -114,11 +146,6 @@ const Login = () => {
                 </form>
             </div>
 
-
-
-
-
-            {/*<button onClick={handleRegister} className="button" type="submit">¿No tienes cuenta?</button> */}
         </>
     )
 }

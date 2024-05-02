@@ -16,14 +16,14 @@ import { Schema } from "mongoose"
  * Este modelo define la estructura de los registros de albumes en la BBD
  * 
  * @model Album
- * @property String  nombre - nombre del album
- * @property String  imagen - nombre de la imagen asociada al album
- * @property Number  stock - numero de unidades disponibles
- * @property String  artista - nombre de cantante/grupo 
- * @property Number  precio - precio del album
- * @property Date  created_at - fecha de creacion
- * @property Date  updated_at - fecha de actualización
- * @property Date  deleted - fecha de borrado
+ * @property {String}  nombre - nombre del album
+ * @property {String}  imagen - nombre de la imagen asociada al album
+ * @property {Number}  stock - numero de unidades disponibles
+ * @property {String}  artista - nombre de cantante/grupo 
+ * @property {Number}  precio - precio del album
+ * @property {Date}  created_at - fecha de creacion
+ * @property {Date}  updated_at - fecha de actualización
+ * @property {Date}  deleted - fecha de borrado
  * 
  */
 
@@ -65,13 +65,13 @@ export const Album = mongoose.model("Album", albumesSchema)
  * Este modelo define la estructura de los registros de usuarios en la BBD
  * 
  * @model Usuario
- * @property String  nombre - nombre del usuario
- * @property String  password - contraseña
- * @property Boolean  is_admin - indica el rol del usuario
- * @property String  direccion - direccion de residencia
- * @property String  ciudad - ciudad donde vive el usuario
- * @property String  telefono - numero de telefono del usuario
- * @property String  email - direccion de email del usuarip
+ * @property {String}  nombre - nombre del usuario
+ * @property {String}  password - contraseña
+ * @property {Boolean}  is_admin - indica el rol del usuario
+ * @property {String}  direccion - direccion de residencia
+ * @property {String}  ciudad - ciudad donde vive el usuario
+ * @property {String}  telefono - numero de telefono del usuario
+ * @property {String}  email - direccion de email del usuarip
  * 
  */
 
@@ -104,10 +104,10 @@ export const Usuario = mongoose.model("Usuario", usuariosSchema)
  * Este modelo define la estructura de los registros de compras en la BBD
  * 
  * @model Compra
- * @property Schema.Types.ObjectId  usuario - id del usuario que realizó la compra
- * @property Array  albumes - lista de albumes comprados
- * @property Number  precio - precio total de la compra
- * @property Date  fecha_compra - fecha de registro de la compra
+ * @property {Schema.Types.ObjectId}  usuario - id del usuario que realizó la compra
+ * @property {Array}  albumes - lista de albumes comprados
+ * @property {Number}  precio - precio total de la compra
+ * @property {Date}  fecha_compra - fecha de registro de la compra
  * 
  */
 

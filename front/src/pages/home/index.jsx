@@ -12,12 +12,18 @@ import audioFile7 from '../../audios/7.mp3';
 import audioFile8 from '../../audios/8.mp3';
 import audioFile9 from '../../audios/9.mp3';
 
+/**
+ * 
+ * Componente que muestra la información de la página principal
+ * @hook {useState} indica la letra pulsada
+ * @hook {useContext} contiene la información del login y si se ha cargado la página
+ * @hook {useRef} cada uno de las pistas de audio (x9)
+ * @hook {useEffect} carga una animación cuando se ha logeado por primemra vez
+ */
 
 export const Home = () => {
     const [letraActiva, setLetraActiva] = useState();
-    const titulo = ['B', 'i', 'e', 'n', 'v', 'e', 'n', 'i', 'd', 'o']
     const { isLoaded, setLoaded } = useContext(LoginContext)
-
     const audioRef1 = useRef(null);
     const audioRef2 = useRef(null);
     const audioRef3 = useRef(null);
@@ -28,14 +34,23 @@ export const Home = () => {
     const audioRef8 = useRef(null);
     const audioRef9 = useRef(null);
 
+    //texto que se muestra por pantalla
+    const titulo = ['B', 'i', 'e', 'n', 'v', 'e', 'n', 'i', 'd', 'o']
 
     useEffect(() => {
         console.log(isLoaded)
+        //espera de 2 segundos hasta mostrar el componente
         setTimeout(() => { setLoaded(true) }, 2000)
     }, [])
 
+    /**
+    * 
+    *  Función que se  carga un audio diferente en función de la tecla pulsada
+    *  
+    *  @param {Number} index posición del array de letras
+    */ 
     const playSound = (index) => {
-
+        
         switch (index) {
             case 0:
                 audioRef1.current.play();
@@ -71,11 +86,21 @@ export const Home = () => {
 
     };
 
-
-
+    /**
+    * 
+    *  Función que se llama al recibir un evento de click
+    *  
+    *  @param {Number} index posición del array de letras
+    */  
     const handleClick = (index) => {
+        
+        //establece la letra activa
         setLetraActiva(index);
+
+        //llama a la función que reproduce el audio
         playSound(index)
+
+        //espera dos segundos antes de desmarcar la letra pulsada como activa
         setTimeout(() => {
             setLetraActiva();
         }, 2000);
@@ -83,6 +108,7 @@ export const Home = () => {
 
     return (<>
 
+        {/** Asocia cada elemento de audio con una pista de audio */}
         <audio ref={audioRef1}>
             <source src={audioFile1} type="audio/mpeg" />
         </audio>
@@ -116,10 +142,9 @@ export const Home = () => {
         </audio>
 
         {
+            // si pasa el tiempo de carga muestra el contenido del componente
             isLoaded ? <> <div className='Home u-center'>
                 <div className='Home-letras'>
-
-
                     {
                         titulo.map((letra, index) => (
                             <h1 key={index} className={`tit ${letraActiva == index ? 'activa' : ''}`} onClick={() => handleClick(index)}>
@@ -129,6 +154,7 @@ export const Home = () => {
                 </div>
                 <span>¡Pulsa las letras y crea tu melodía!</span>
             </div></> : <>
+                {/** mientras dura el tiempo de carga muestra una animación */}
                 <div className='Loading u-center'>
                     <div className='u-center'>
                         <h2>Cargando...</h2>

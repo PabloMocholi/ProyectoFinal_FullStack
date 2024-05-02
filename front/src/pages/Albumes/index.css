@@ -1,3 +1,15 @@
+/*
+    index.css --> lo que podría ser albumes.css
+
+    CSS de index.css --> lo que podría ser albumes.jsx
+
+    - Albumes 
+    - carritoBtn 
+    - content 
+    - buscador 
+    - buscador::placeholder 
+    
+*/
 .Albumes {
 
     display: flex;

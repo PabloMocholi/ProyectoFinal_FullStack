@@ -1,3 +1,23 @@
+/**
+
+    login.css
+
+    CSS de login.jsx
+
+    - Login
+    - form
+    - div-register
+    - is_active
+    - form-register
+    - button
+    - button:hover
+    - u-marginBottom
+    - registrate
+    - registrate:hover
+    - right
+
+*/
+
 .Login{
     display: flex;
     flex-direction: column;
@@ -6,7 +26,7 @@
     position: fixed;
     top:50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);  /* centrar elemento */
     width: 80%;
 
 }
@@ -27,23 +47,22 @@
     position: fixed;
     top: -50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);  /* centrar elemento */
     width: 50%;
     border: 1px solid white;
     padding: 20px;
     border-radius: 20px;
     background-color: black;
-    transition: top 1s;
+    transition: top 1s;     /* Transición para mostrar el panel de registro */
 }
 
 .is_active{
-    top: 50%;
+    top: 50%;     /* reposicionamiento del pnael del registro al centro de la pantalla */
 }
 
 .form-register{
     display: flex;
     flex-direction: column;
-  
     text-align: left;
 
 }
@@ -64,7 +83,6 @@
 .registrate{
     background-color: transparent;
     color: white;
-
     font-weight: bold;
 }
 .registrate:hover{
@@ -78,6 +96,8 @@
     right: 1%;
     top: 1%;
 }
+
+/* Media query para dispositivos móviles */
 
 @media (max-width: 480px) {
     .form{
@@ -93,6 +113,7 @@
     
 }
 
+/* Media query para tablets y portátiles */
 @media (max-width: 1024px) {
     .form{
       

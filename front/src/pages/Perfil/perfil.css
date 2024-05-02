@@ -1,3 +1,22 @@
+/*
+    perfil.css
+
+    CSS de perfil.jsx
+
+    - FormPerfil
+    - FormPerfil-row
+    - Compras
+    - Compra
+    - Tit
+    - Compra-dato
+    - Compra-imgs
+    - Compra-cantidad
+    - Compra-img
+    - Compra-imgC
+    - Modal
+    - is_shown
+*/
+
 .FormPerfil{
     padding: 20px;
     display: flex;

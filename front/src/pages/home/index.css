@@ -1,3 +1,17 @@
+/*
+  index.css --> lo que podría ser  home.css
+
+  CSS de index.jsx --> lo que podría ser home.jsx
+
+  - Home 
+  - Home-letras 
+  - tit 
+  - tit.activa 
+  - Loading 
+  - u-center
+
+*/
+
 .Home {
   display: flex;
   justify-content: center;

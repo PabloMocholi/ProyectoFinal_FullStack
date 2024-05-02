@@ -1,3 +1,16 @@
+/*
+
+    usuarios.css
+
+    CSS de usuarios.jsx
+
+    - ListaTarjetasUsuario
+    - TarjetaUsuario
+    - cliente
+    - TarjetaUsuario-row
+
+*/
+
 .ListaTarjetasUsuario{
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +45,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* Media querys para pantallas pequeñas y medianas*/
 @media (min-width: 360px) and (max-width: 1024px){
     .ListaTarjetasUsuario{
         height: 460px;

@@ -1,4 +1,9 @@
 import './footer.css'
+
+
+/**
+ * Componente que muestra un footer con enlaces a diversas redes sociales del alumno
+ */
 const Footer = ()=>{
     return(<>
         <div className="Footer">
