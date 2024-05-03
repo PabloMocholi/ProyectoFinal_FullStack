@@ -56,7 +56,7 @@ const Inventario = () => {
         {/** div que permite la navegación entre los componentes disponiibles para el admin */}
         <div className='intro'>
 
-            <h1>Panel de administrador</h1>
+            <h1 className='intro-h1'>Panel de administrador</h1>
             <div className='intro-a'>
                 <a onClick={() => setPantalla("usuario")} className={pantalla == "usuario" ? ' a active' : ' a '}>Usuarios</a>
                 <a onClick={() => setPantalla("inventario")} className={pantalla == "inventario" ? ' a active' : ' a '}>Inventario</a>

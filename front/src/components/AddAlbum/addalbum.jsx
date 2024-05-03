@@ -67,7 +67,7 @@ const AddAlbum = ({ isOpen, ToggleActive, cargaInventario }) => {
         newformData.append('artista', formData.artista);
         newformData.append('precio', formData.precio);
         newformData.append('stock', formData.stock);
-        newformData.append('imagen', formData.imagen);
+        newformData.append('imagen', formData.imagen); //IMCOMPATIBLE EN VERCEL
 
         console.log(newformData);
 

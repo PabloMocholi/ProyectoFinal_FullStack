@@ -64,6 +64,7 @@ body {
 
 .button {
   background-color: #9C00DA;
+  color: white;
 }
 
 .button:hover {
