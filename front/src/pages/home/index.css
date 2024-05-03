@@ -53,3 +53,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* Media query para dispositivos móviles */
+
+@media (max-width: 480px) {
+  .tit {
+  
+    font-size: 700%;
+
+  }
+
+  
+.tit.activa {
+  font-size: 800%;
+}
+
+  
+  
+}

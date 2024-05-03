@@ -104,7 +104,7 @@ const AlbumLightBox = ({ ToggleActive, datos, procesarCompra }) => {
                         <h2 className='h2L'>{nombre}</h2>
                         <h4 className='h4'>{artista}</h4>
                     </div>
-                    <div className='Album-info-bottom'>
+                    <div className='AlbumL-info-bottom'>
                         <span>Precio: {precio}</span>
                         <span>Disponibles: {stock}</span>
 

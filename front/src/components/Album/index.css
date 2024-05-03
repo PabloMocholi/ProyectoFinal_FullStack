@@ -29,70 +29,74 @@
     - u-blur
 */
 
-.Album{
+.Album {
 
     position: relative;
     overflow: hidden;
     width: 80%;
     border-radius: 20px;
-    box-shadow: 1px 5px 10px black ;
+    box-shadow: 1px 5px 10px black;
     cursor: pointer;
-  
+
 
 }
 
-.Album--disabled{
+.Album--disabled {
 
     position: relative;
     overflow: hidden;
     width: 80%;
     border-radius: 20px;
-    box-shadow: 1px 5px 10px black ;
-    filter: grayscale(100%); /* establece el color en escala de grises negro --> blanco */
+    box-shadow: 1px 5px 10px black;
+    filter: grayscale(100%);
+    /* establece el color en escala de grises negro --> blanco */
     color: red;
     text-shadow: 0.5px 0 #fff, -0.5px 0 #fff, 0 0.5px #fff, 0 -0.5px #fff,
-    0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff; /* rodea las letras de un borde blanco fino*/
+        0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+    /* rodea las letras de un borde blanco fino*/
     font-size: 110%;
 
 }
 
 
-.Album:hover{
+.Album:hover {
     border: 1px solid white;
     transform: scale(1.05);
 
 }
 
-.Album-content{
+.Album-content {
     width: 94%;
     padding: 20px;
     display: flex;
     position: relative;
 }
 
-.Album-info{
+.Album-info {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-   
+
 }
-.Album-info-top{
+
+.Album-info-top {
     display: flex;
     flex-direction: column;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-    0.5px 1px #000, -1px -1px #000,1px -1px #000, -1px 1px #000; /* rodea las letras de un borde negro fino*/
+        0.5px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+    /* rodea las letras de un borde negro fino*/
 
 }
 
-.Album-info-bottom{
+.Album-info-bottom {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.precio{
+.precio {
     border: 1px solid black;
     font-size: 110%;
     padding: 10px;
@@ -106,36 +110,36 @@
 
 }
 
-.background-img{
-  
+.background-img {
+
     width: 100%;
     height: 100%;
-    position: absolute; 
+    position: absolute;
     filter: blur(20px);
     background-size: cover;
-    
+
 }
 
-.agotado{
+.agotado {
     position: absolute;
     width: 30%;
 }
 
-.img{
+.img {
     width: 300px;
 
 }
 
-.h2{
-    
+.h2 {
+
     margin: 0;
     font-size: 350%;
     padding-top: 20px;
-  
-    
+
+
 }
 
-.h4{
+.h4 {
     font-weight: 200;
     font-size: 150%;
     margin: 0;
@@ -143,14 +147,15 @@
 
 /*-----------*/
 
-.AlbumL{
+.AlbumL {
     width: 60%;
     height: 70%;
     background-color: white;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%); /* centra el elemento */
+    transform: translate(-50%, -50%);
+    /* centra el elemento */
     color: white;
     z-index: 1;
     display: flex;
@@ -159,10 +164,10 @@
     justify-content: center;
     background-color: black;
     border-radius: 20px;
-   
+
 }
 
-.AlbumL-data{
+.AlbumL-data {
     display: flex;
     align-items: center;
     padding: 20px;
@@ -170,103 +175,110 @@
 }
 
 
-.AlbumL-info-bottom{
-   
+.AlbumL-info-bottom {
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-   
+
 }
-.buttonAddCarrito{
+
+.buttonAddCarrito {
     background-color: rgba(156, 0, 218, 1);
 }
-.buttonClose{
+
+.buttonClose {
     position: fixed;
     top: 2%;
-    right:2%;
+    right: 2%;
     cursor: pointer;
     background-color: red;
     border-radius: 20px;
     width: 40px;
 }
 
-.h2L{
+.h2L {
     margin: 0;
     font-size: 300%;
     padding-top: 20px;
 }
 
 
-.u-blur{
+.u-blur {
     filter: blur(20px);
 }
 
 /* Media querys para móviles*/
 
 @media (max-width: 480px) {
-    .Album-content{
-      
+    .Album-content {
+
         flex-direction: column;
-         
+
     }
-    .Album-info-top{
+
+    .Album-info-top {
         font-size: 90%;
         margin-right: 10px;
     }
 
-    .h2{
-   
+    .h2 {
+
         font-size: 200%;
         text-align: center;
     }
 
-    .precio{
+    .precio {
         font-size: 70%;
         position: absolute;
-        right: 2%;
+        right: 10%;
         width: 100px;
-        bottom: -9%;
-        right: 80%;
+        top: -45%;
         width: 30px;
         height: 10px;
-    
+
     }
-    .img{
+
+    .img {
         width: 20%;
+        height: 20%;
     }
 
-    .AlbumL{
+    .AlbumL {
         width: 80%;
-    
-       
-    }
-    
 
-    .AlbumL-data{
-       flex-direction: column;
-      
-    }
-
-    .imgL{width: 80%;}
-
-    .h2L{
-        font-size:250%;
 
     }
-    
+
+
+    .AlbumL-data {
+        flex-direction: column;
+
+    }
+
+    .imgL {
+        width: 80%;
+        height: 95%;
+    }
+
+    .h2L {
+        font-size: 250%;
+
+    }
+
 }
 
 /* Media querys para pantallas medianas*/
 
-@media (min-width: 481px)  and (max-width: 1024px) {
-  
-    .h2{
-   
+@media (min-width: 481px) and (max-width: 1024px) {
+
+    .h2 {
+
         font-size: 160%;
     }
 
-    
-    .precio{
+
+    .precio {
         font-size: 80%;
         position: absolute;
         right: -10%;
@@ -274,17 +286,17 @@
         bottom: -5%;
         right: 0%;
 
-    
+
     }
 
-    .imgL{width: 80%;}
-
-    .AlbumL-data{
-    flex-direction: column;
+    .imgL {
+        width: 80%;
     }
-    
+
+    .AlbumL-data {
+        flex-direction: column;
+    }
+
 
 
 }
-
-
