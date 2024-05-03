@@ -125,7 +125,7 @@
     top:20%
 }
 
-@media (min-width: 360px) and (max-width: 1024px) {
+@media (min-width: 360px) and (max-width: 1200px) {
     .Compra-imgs{
         display: flex;
         justify-content: start;
