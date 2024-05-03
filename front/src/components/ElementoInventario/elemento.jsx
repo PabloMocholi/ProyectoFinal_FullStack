@@ -69,6 +69,7 @@ const Elemento = ({ datos, cargaInventario }) => {
     *  @param {event} e evento que se produce
     */
     const handleImageChange = (e) => {
+        setCambio(true)
         const file = e.target.files[0];
         setFormData({ ...formData, imagen: file });
     };

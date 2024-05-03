@@ -118,7 +118,7 @@ const Login = () => {
                 </form>
                 <div>
                     <span> ¿Eres nuevo por aquí?</span>
-                    <button className="registrate" onClick={ToggleActive}>Registrate</button>
+                    <button className="registrate" onClick={ToggleActive}>Regístrate</button>
 
                 </div>
             </div>
@@ -129,11 +129,11 @@ const Login = () => {
                 <button className="right" onClick={ToggleActive}>X</button>
                 <form className="form-register" onSubmit={handleRegister} action="#" method="POST">
                     <label htmlFor="user">Usuario</label>
-                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="user" id="user" />
+                    <input className="u-marginBottom" required onChange={handleInputChange} type="text" name="user" id="user" />
                     <label htmlFor="pass">Contraseña</label>
-                    <input className="u-marginBottom" onChange={handleInputChange} type="password" name="pass" id="pass" />
+                    <input className="u-marginBottom" required onChange={handleInputChange} type="password" name="pass" id="pass" />
                     <label htmlFor="mail">Email</label>
-                    <input className="u-marginBottom" onChange={handleInputChange} type="text" name="mail" id="mail" />
+                    <input className="u-marginBottom" required onChange={handleInputChange} type="text" name="mail" id="mail" />
                     <label htmlFor="dir">Dirección</label>
                     <input className="u-marginBottom" onChange={handleInputChange} type="text" name="dir" id="dir" />
                     <label htmlFor="ciudad">Ciudad</label>

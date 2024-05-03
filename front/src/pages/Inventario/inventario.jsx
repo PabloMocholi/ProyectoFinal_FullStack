@@ -8,7 +8,7 @@ import Usuarios from '../Usuarios/usuarios.jsx'
 
 /**
  * 
- * Componente que la vista del administrador
+ * Componente que muestra la vista del administrador
  * @hook {useState} contiene el contenido de los albumes
  * @hook {useState} indica si se debe mostrar u ocultar el form para añadir un nuevo album
  * @hook {useState} contiene un string para marcar que contenido se debe mostrar

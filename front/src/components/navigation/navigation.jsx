@@ -31,7 +31,7 @@ const Navigation = () => {
             <ul className="ul">
                 {/** comprueba que se está registrado y el rol del usuario */}
                 {
-                    {/** rol de cliente */ }
+                    // rol de cliente 
                         (isLoged && userData.is_admin == false) ? <>
                         {/** página principal */}
                         <li className="li">
